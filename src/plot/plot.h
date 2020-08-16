@@ -1,5 +1,5 @@
 #ifndef PLOT_H
-#define PLOT_H value
+#define PLOT_H
 
 #include <string>
 
