@@ -1,5 +1,5 @@
 #ifndef API_H
-#define API_H value
+#define API_H
 
 #include <string>
 
