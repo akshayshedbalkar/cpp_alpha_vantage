@@ -1,5 +1,4 @@
 # cpp_alpha_vantage
-Using Alpha Vantage API with C++
 
 This barebones project uses the Alpha Vantage API with C++ to fetch data and plot it on a chart. The goal is to have as simple a wrapper as possible. 
 
