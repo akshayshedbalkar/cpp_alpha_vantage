@@ -1,5 +1,5 @@
 #ifndef STOCK_H
-#define STOCK_H value
+#define STOCK_H
 #include <string>
 
 #include "api.h"
