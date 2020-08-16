@@ -20,14 +20,6 @@ target_compile_features(curl_stocks
     PRIVATE 
         cxx_std_17
 )
-# target_compile_options(curl_stocks 
-#     PRIVATE 
-#         -Wall
-# )
-# target_compile_definitions(curl_stocks 
-#      PRIVATE 
-#          foo
-#  )
 
 ##Linker options, external libraries/objects to link against
 target_link_libraries(curl_stocks 
@@ -39,10 +31,6 @@ target_link_libraries(curl_stocks
      Boost::system
      Boost::iostreams
  )
-# target_link_options(curl_stocks 
-#      PRIVATE 
-#          blabla
-#  )
 
 ##Set target properties
 set_target_properties(curl_stocks
@@ -53,7 +41,7 @@ set_target_properties(curl_stocks
 )
 
 
-add_custom_command(TARGET curl_stocks POST_BUILD        # Adds a post-build event to MyTest
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different  # which executes "cmake - E copy_if_different..."
-        "${PROJECT_SOURCE_DIR}/extern/lib/libcurl-x64.dll"      # <--this is in-file
-        $<TARGET_FILE_DIR:curl_stocks>)                 # <--this is out-file path
+add_custom_command(TARGET curl_stocks POST_BUILD        
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different  
+        "${PROJECT_SOURCE_DIR}/extern/lib/libcurl-x64.dll"      
+        $<TARGET_FILE_DIR:curl_stocks>)                 
