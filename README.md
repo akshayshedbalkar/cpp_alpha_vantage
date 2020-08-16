@@ -1,13 +1,13 @@
 # cpp_alpha_vantage
 Using Alpha Vantage API with C++
 
-This barebones project uses the Alpha Vantage API with C++. 
+This barebones project uses the Alpha Vantage API with C++. The goal is to have as simple a wrapper as possible. 
 
 ### Dependencies
 
-- curl
-- gnuplot
-- boost
+- curl (https://curl.haxx.se/)
+- gnuplot (http://www.gnuplot.info/)
+- boost (https://www.boost.org/)
 
 ### Brief overview
 The project consists of 3 classes wrapping the functionalities of Alpha vantage API access (through curl), plotting (with gnuplot) and data storage of stocks. 
@@ -15,6 +15,7 @@ The project is quite rudimentary and supports the following:
 
 - Time data about any symbol can be fetched and absolute values can be plotted
 - Time data of various symbols can be fetched and absolute values can be plotted on the same plot
+- Data is saved in a file in csv format with the symbol name as filename
 
 ### Basic usage:
 
@@ -49,7 +50,17 @@ plot.display();
 stock1.display_data();
 stock2.display_data();
 ```
-Note that all charts wil be shown one after another. 
+Note that all charts wil be shown one after another. You can put all stock objects in a `std::vector`and fetch data in a loop. Note however, that the free Alpha Vange API key only allow 5 calls at a time. 
+
+### Building the program
+
+If dependencies (curl, gnuplot, boost) are installed, building is as simple as:
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
 
 ### TODO
 
