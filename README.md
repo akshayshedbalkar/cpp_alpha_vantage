@@ -2,12 +2,6 @@
 
 This barebones project uses the Alpha Vantage API with C++ to fetch data and plot it on a chart. The goal is to have as simple a wrapper as possible. 
 
-### Dependencies
-
-- curl (https://curl.haxx.se/)
-- gnuplot (http://www.gnuplot.info/)
-- boost (https://www.boost.org/)
-
 ### Brief overview
 The project consists of 3 classes wrapping the functionalities of Alpha vantage API access (through curl), plotting (with gnuplot) and data storage of stocks. 
 The project is quite rudimentary and supports the following:
@@ -50,6 +44,12 @@ stock1.display_data();
 stock2.display_data();
 ```
 Note that all charts wil be shown one after another. You can put all stock objects in a `std::vector`and fetch data in a loop. Note however, that the free Alpha Vange API key only allow 5 calls at a time. 
+
+### Dependencies
+
+- curl (https://curl.haxx.se/)
+- gnuplot (http://www.gnuplot.info/)
+- boost (https://www.boost.org/)
 
 ### Building the program
 
