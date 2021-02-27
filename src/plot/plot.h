@@ -7,7 +7,6 @@
 
 class Plot {
    private:
-    Gnuplot gp;
     std::string file_names;
 
    public:
