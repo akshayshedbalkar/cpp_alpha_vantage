@@ -66,11 +66,11 @@ make
 To make this project better, the following needs to be done. A lot of these goals can be accomplished by implementing a csv parser 
 which converts the csv string into a 2D vector of doubles.  
 
-- When plotting all symbols on one chart, show percentage increase rather than absolute values. Some deeper knowledge of gnuplot is required here. 
-- Remove csv files after program exit. Removing files in the destructor does not seem to work. The destructor is called before the gnuplot stream leading to no data to plot. 
-- Plot data as candlestick chart.
-- Extra overloaded functions to use optional features of Alpha Vantage API.
-- Show all charts simultaneously instead of one by one. I do not know if this is a limitation of gnuplot c++ interface. 
+- When plotting all symbols on one chart, show percentage increase rather than absolute values. [Issue #1]
+- Remove csv files after program exit. Removing files in the destructor does not seem to work. The destructor is called before the gnuplot stream leading to no data to plot. [Issue #2]
+- Plot data as candlestick chart. [Issue #4]
+- Extra overloaded functions to use optional features of Alpha Vantage API. [Issue #5]
+- Show all charts simultaneously instead of one by one. I do not know if this is a limitation of gnuplot c++ interface. [Issue #3]
 
 
 
