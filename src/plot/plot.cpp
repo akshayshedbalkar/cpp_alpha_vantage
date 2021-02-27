@@ -20,10 +20,6 @@ void Plot::create_temp_file(const std::string &data, const std::string &file_nam
     file_names.append(file_name);
 }
 
-void Plot::setup_gnuplot() {
-    setup_gnuplot(gp);
-}
-
 void Plot::setup_gnuplot(Gnuplot &g) {
     g << "set datafile separator ','\n";
     g << "set xdata time\n";
@@ -38,10 +34,11 @@ void Plot::display_stock_data(const std::string &file_name) {
 }
 
 void Plot::display() {
-    setup_gnuplot();
+    Gnuplot temp;
+    setup_gnuplot(temp);
 
-    gp << "filenames = \"" << file_names.c_str() << "\"\n";
-    gp << "plot for [file in filenames] file using 1:2 with lines title file\n";
+    temp << "filenames = \"" << file_names.c_str() << "\"\n";
+    temp << "plot for [file in filenames] file using 1:2 with lines title file\n";
 }
 
 void Plot::cleanup() {
@@ -52,4 +49,5 @@ void Plot::cleanup() {
 }
 
 Plot::~Plot() {
+    cleanup();
 }

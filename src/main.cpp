@@ -14,12 +14,15 @@ int main() {
 
     Stock stock1(&api, &plot, "IBM");
     Stock stock2(&api, &plot, "GOOGL");
+    Stock stock3(&api, &plot, "NVDA");
     stock1.fetch_data("TIME_SERIES_MONTHLY");
     stock2.fetch_data("TIME_SERIES_MONTHLY");
+    stock3.fetch_data("TIME_SERIES_MONTHLY");
 
-    plot.display();//show all plots on one chart
     stock1.display_data();//show each plot of separate chart
     stock2.display_data();
+    stock3.display_data();
+    plot.display();//show all plots on one chart
 
     return 0;
 }
