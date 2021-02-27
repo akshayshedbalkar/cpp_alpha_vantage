@@ -18,7 +18,7 @@ add_subdirectory(extern)
 ##Compiler defines, options and features
 target_compile_features(curl_stocks 
     PRIVATE 
-        cxx_std_17
+        cxx_std_20
 )
 
 ##Linker options, external libraries/objects to link against

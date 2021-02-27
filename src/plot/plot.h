@@ -7,7 +7,7 @@
 
 class Plot {
    private:
-    std::string file_names;
+       std::vector<std::string> file_names;
 
    public:
     void process_data(std::string &s);
