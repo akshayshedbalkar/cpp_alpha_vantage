@@ -30,7 +30,10 @@ void Plot::setup_gnuplot(Gnuplot &g) {
 void Plot::display_stock_data(const std::string &file_name) {
     Gnuplot temp;
     setup_gnuplot(temp);
-    temp << "plot \"" << file_name.c_str() << "\" using 1:2 with lines\n";
+    temp << "set ylabel \"%\"\n";
+    temp << "first=system(\"awk -F',' 'END {print $2}' " << file_name.c_str() <<"\")\n";
+    temp << "plot \"" << file_name.c_str() << "\" using 1:(($2-first)*100/first) with lines title \"" << file_name.c_str() << "\"\n";
+
 }
 
 void Plot::display() {
