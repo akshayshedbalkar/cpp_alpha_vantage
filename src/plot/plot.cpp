@@ -29,6 +29,10 @@ void Plot::setup_gnuplot(Gnuplot &g) {
     g << "set ylabel \"%\"\n";
 }
 
+/* void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name){ */
+/*     g << " first_"<<file_name.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file_name.c_str() <<"\")\n"; */
+/* } */
+
 void Plot::display_stock_data(const std::string &file_name) {
     Gnuplot temp;
     setup_gnuplot(temp);
@@ -46,15 +50,17 @@ void Plot::display() {
     int i=0;
 
     for(const auto& file : file_names) {
-        temp << " first_"<<file.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file.c_str() <<"\")\n";
-        if(i==0){
-        temp << "plot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
+        if(file != " "){
+            temp << " first_"<<file.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file.c_str() <<"\")\n";
+            if(i==0){
+                temp << "plot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
 
-        }else{
+            }else{
 
-        temp << "replot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
+                temp << "replot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
+            }
+            i++;
         }
-        i++;
     }
 
 }
