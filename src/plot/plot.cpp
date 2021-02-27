@@ -43,9 +43,20 @@ void Plot::display() {
 
     Gnuplot temp;
     setup_gnuplot(temp);
+    int i=0;
 
-    temp << "filenames = \"" << files.c_str() << "\"\n";
-    temp << "plot for [file in filenames] file using 1:2 with lines title file\n";
+    for(const auto& file : file_names) {
+        temp << " first_"<<file.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file.c_str() <<"\")\n";
+        if(i==0){
+        temp << "plot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
+
+        }else{
+
+        temp << "replot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
+        }
+        i++;
+    }
+
 }
 
 void Plot::cleanup() {
