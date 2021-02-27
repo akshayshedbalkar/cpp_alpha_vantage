@@ -8,6 +8,11 @@
 #include "gnuplot-iostream.h"
 #include "plot.h"
 
+enum class Plot_type{
+    PLOT=0,
+    REPLOT=1
+};
+
 void Plot::process_data(std::string &s) {
     s.insert(0, "#");
     s.erase(std::remove(s.begin(), s.end(), '\r'), s.end());
@@ -17,7 +22,6 @@ void Plot::create_temp_file(const std::string &data, const std::string &file_nam
     std::ofstream out(file_name.c_str());
     out << data;
     out.close();
-    file_names.push_back(" ");
     file_names.push_back(file_name);
 }
 
@@ -29,45 +33,50 @@ void Plot::setup_gnuplot(Gnuplot &g) {
     g << "set ylabel \"%\"\n";
 }
 
-/* void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name){ */
-/*     g << " first_"<<file_name.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file_name.c_str() <<"\")\n"; */
-/* } */
+void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name){
+    g << " first_"<<file_name.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file_name.c_str() <<"\")\n";
+}
+
+void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, Plot_type type){
+    std::string p;
+    if(type == Plot_type::PLOT){
+        p="plot";
+    }else if(type == Plot_type::REPLOT){
+        p="replot";
+    }
+
+    g << p.c_str()<< " \"" << file_name.c_str() << "\" using 1:(($2-first_"<<file_name.c_str()<<")*100/first_"<<file_name.c_str()<<") with lines title \"" << file_name.c_str() << "\"\n";
+}
 
 void Plot::display_stock_data(const std::string &file_name) {
     Gnuplot temp;
     setup_gnuplot(temp);
 
-    temp << "first=system(\"awk -F',' 'END {print $2}' " << file_name.c_str() <<"\")\n";
-    temp << "plot \"" << file_name.c_str() << "\" using 1:(($2-first)*100/first) with lines title \"" << file_name.c_str() << "\"\n";
+    get_first_datapoint(temp,file_name);
+    percentage_plot(temp,file_name,Plot_type::PLOT);
 
 }
 
 void Plot::display() {
-    std::string files = std::accumulate(file_names.begin(), file_names.end(), std::string{});
-
     Gnuplot temp;
     setup_gnuplot(temp);
     int i=0;
 
     for(const auto& file : file_names) {
-        if(file != " "){
-            temp << " first_"<<file.c_str()<<"=system(\"awk -F',' 'END {print $2}' " << file.c_str() <<"\")\n";
-            if(i==0){
-                temp << "plot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
-
-            }else{
-
-                temp << "replot \"" << file.c_str() << "\" using 1:(($2-first_"<<file.c_str()<<")*100/first_"<<file.c_str()<<") with lines title \"" << file.c_str() << "\"\n";
-            }
-            i++;
+        get_first_datapoint(temp,file);
+        if(i==0){
+            percentage_plot(temp, file, Plot_type::PLOT);
+        }else{
+            percentage_plot(temp, file, Plot_type::REPLOT);
         }
+        i++;
     }
 
 }
 
 void Plot::cleanup() {
     for(const auto& i : file_names) {
-        if(i != " ") remove(i.c_str());
+        remove(i.c_str());
     }
 }
 
