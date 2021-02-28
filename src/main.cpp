@@ -10,6 +10,9 @@ static void read_stocks_from_config(const std::string &config_file_name, std::ve
 int main()
 {
     std::string my_apikey = "demo";
+    if(my_apikey == "demo"){
+        std::cout<<"Warning: You are using API key \"demo\". Stocks other than IBM will not work!"<<std::endl;
+    }
     std::string my_cert_path = "E:\\programming\\cpp\\stocks\\extern\\certs\\curl-ca-bundle.crt";
 
     // configure alphavantage and curl. This is only required once.
