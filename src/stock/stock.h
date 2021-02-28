@@ -16,8 +16,8 @@ class Stock {
     Stock();
     Stock(Api *a, Plot *p, std::string s);
 
-    void fetch_data(std::string function);
-    void display_data();
+    void fetch(std::string function);
+    void display();
 };
 
 #endif /* ifndef STOCK_H */

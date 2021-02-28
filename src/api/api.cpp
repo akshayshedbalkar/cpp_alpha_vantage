@@ -18,7 +18,7 @@ Api::Api(std::string apikey, std::string cert_path) : curl_result{CURLE_OK}, api
     curl_easy_setopt(api_handle, CURLOPT_CAINFO, cert_path.c_str());
 }
 
-void Api::fetch_data(std::string function, std::string symbol, std::string &stock_data) {
+void Api::fetch(std::string function, std::string symbol, std::string &stock_data) {
     std::string url = base_url;
     url += "function=" + function;
     url += "&symbol=" + symbol;

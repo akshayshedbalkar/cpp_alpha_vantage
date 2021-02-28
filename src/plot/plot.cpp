@@ -48,7 +48,7 @@ void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, Plot_type t
     g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($2-first_" << file_name.c_str() << ")*100/first_" << file_name.c_str() << ") with lines title \"" << file_name.c_str() << "\"\n";
 }
 
-void Plot::display_stock_data(const std::string &file_name) {
+void Plot::display(const std::string &file_name) {
     Gnuplot temp;
     setup_gnuplot(temp);
 

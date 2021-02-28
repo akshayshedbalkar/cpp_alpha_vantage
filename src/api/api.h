@@ -19,7 +19,7 @@ class Api {
     Api();
     Api(std::string apikey, std::string cert_path);
 
-    void fetch_data(std::string function, std::string symbol, std::string &stock_data);
+    void fetch(std::string function, std::string symbol, std::string &stock_data);
 
     ~Api();
 };

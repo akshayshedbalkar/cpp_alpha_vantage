@@ -21,14 +21,14 @@ int main() {
     /* Stock stock3(&api, &plot, "NVDA"); */
 
     //Fetch stock data
-    stock1.fetch_data("TIME_SERIES_MONTHLY");
-    /* stock2.fetch_data("TIME_SERIES_MONTHLY"); */
-    /* stock3.fetch_data("TIME_SERIES_MONTHLY"); */
+    stock1.fetch("TIME_SERIES_MONTHLY");
+    /* stock2.fetch("TIME_SERIES_MONTHLY"); */
+    /* stock3.fetch("TIME_SERIES_MONTHLY"); */
 
     //show each plot of separate chart
-    stock1.display_data();
-    /* stock2.display_data(); */
-    /* stock3.display_data(); */
+    stock1.display();
+    /* stock2.display(); */
+    /* stock3.display(); */
 
     //show all plots on one chart
     plot.display();
