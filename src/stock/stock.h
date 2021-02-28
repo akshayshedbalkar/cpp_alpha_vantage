@@ -5,19 +5,20 @@
 #include "api.h"
 #include "plot.h"
 
-class Stock {
-   private:
+class Stock
+{
+  private:
     Api *api;
     Plot *plot;
     std::string stock_data;
     std::string symbol;
 
-   public:
+  public:
     Stock();
-    Stock(Api *a, Plot *p, std::string s);
+    Stock(Api *a, Plot *p, const std::string &s);
 
-    void fetch(std::string function);
-    void display();
+    void fetch(const std::string &function);
+    void display() const;
 };
 
 #endif /* ifndef STOCK_H */

@@ -1,24 +1,30 @@
+#include "api.h"
+
 #include <iostream>
 
-#include "api.h"
 #include "curl.h"
 
-size_t callback(void *contents, size_t size, size_t nmemb, std::string *g) {
+size_t callback(void *contents, size_t size, size_t nmemb, std::string *g)
+{
     size_t newLength = size * nmemb;
     g->append((char *)contents, newLength);
     return newLength;
 }
 
-Api::Api() : Api{"demo", "C:\\curl-ca-bundle.crt"} {
+Api::Api() : Api{"demo", "C:\\curl-ca-bundle.crt"}
+{
 }
 
-Api::Api(std::string apikey, std::string cert_path) : curl_result{CURLE_OK}, apikey{apikey}, base_url{"https://www.alphavantage.co/query?"} {
+Api::Api(std::string apikey, std::string cert_path)
+    : curl_result{CURLE_OK}, apikey{apikey}, base_url{"https://www.alphavantage.co/query?"}
+{
     curl_global_init(CURL_GLOBAL_ALL);
     api_handle = curl_easy_init();
     curl_easy_setopt(api_handle, CURLOPT_CAINFO, cert_path.c_str());
 }
 
-void Api::fetch(std::string function, std::string symbol, std::string &stock_data) {
+void Api::fetch(const std::string &function, const std::string &symbol, std::string &stock_data)
+{
     std::string url = base_url;
     url += "function=" + function;
     url += "&symbol=" + symbol;
@@ -31,12 +37,14 @@ void Api::fetch(std::string function, std::string symbol, std::string &stock_dat
 
     curl_result = curl_easy_perform(api_handle);
 
-    if (curl_result != CURLE_OK) {
+    if (curl_result != CURLE_OK)
+    {
         std::cerr << "curl_easy_perform() failed:" << curl_easy_strerror(curl_result) << "\n";
     }
 }
 
-Api::~Api() {
+Api::~Api()
+{
     curl_easy_cleanup(api_handle);
     curl_global_cleanup();
 }

@@ -1,3 +1,5 @@
+#include "plot.h"
+
 #include <algorithm>
 #include <iostream>
 #include <iterator>
@@ -6,26 +8,29 @@
 #include <string>
 
 #include "gnuplot-iostream.h"
-#include "plot.h"
 
-enum class Plot_type {
+enum class Plot_type
+{
     PLOT = 0,
     REPLOT = 1
 };
 
-void Plot::process_data(std::string &s) {
+void Plot::process_data(std::string &s) const
+{
     s.insert(0, "#");
     s.erase(std::remove(s.begin(), s.end(), '\r'), s.end());
 }
 
-void Plot::create_temp_file(const std::string &data, const std::string &file_name) {
+void Plot::create_temp_file(const std::string &data, const std::string &file_name)
+{
     std::ofstream out(file_name.c_str());
     out << data;
     out.close();
     file_names.push_back(file_name);
 }
 
-void Plot::setup_gnuplot(Gnuplot &g) {
+void Plot::setup_gnuplot(Gnuplot &g) const
+{
     g << "set datafile separator ','\n";
     g << "set xdata time\n";
     g << "set timefmt \"%Y-%m-%d\"\n";
@@ -33,22 +38,29 @@ void Plot::setup_gnuplot(Gnuplot &g) {
     g << "set ylabel \"%\"\n";
 }
 
-void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) {
+void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
+{
     g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $2}' " << file_name.c_str() << "\")\n";
 }
 
-void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, Plot_type type) {
+void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_type type) const
+{
     std::string p;
-    if (type == Plot_type::PLOT) {
+    if (type == Plot_type::PLOT)
+    {
         p = "plot";
-    } else if (type == Plot_type::REPLOT) {
+    }
+    else if (type == Plot_type::REPLOT)
+    {
         p = "replot";
     }
 
-    g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($2-first_" << file_name.c_str() << ")*100/first_" << file_name.c_str() << ") with lines title \"" << file_name.c_str() << "\"\n";
+    g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($2-first_" << file_name.c_str() << ")*100/first_"
+      << file_name.c_str() << ") with lines title \"" << file_name.c_str() << "\"\n";
 }
 
-void Plot::display(const std::string &file_name) {
+void Plot::display(const std::string &file_name) const
+{
     Gnuplot temp;
     setup_gnuplot(temp);
 
@@ -56,28 +68,36 @@ void Plot::display(const std::string &file_name) {
     percentage_plot(temp, file_name, Plot_type::PLOT);
 }
 
-void Plot::display() {
+void Plot::display() const
+{
     Gnuplot temp;
     setup_gnuplot(temp);
     int i = 0;
 
-    for (const auto &file : file_names) {
+    for (const auto &file : file_names)
+    {
         get_first_datapoint(temp, file);
-        if (i == 0) {
+        if (i == 0)
+        {
             percentage_plot(temp, file, Plot_type::PLOT);
-        } else {
+        }
+        else
+        {
             percentage_plot(temp, file, Plot_type::REPLOT);
         }
         i++;
     }
 }
 
-void Plot::cleanup() {
-    for (const auto &i : file_names) {
+void Plot::cleanup() const
+{
+    for (const auto &i : file_names)
+    {
         remove(i.c_str());
     }
 }
 
-Plot::~Plot() {
+Plot::~Plot()
+{
     cleanup();
 }
