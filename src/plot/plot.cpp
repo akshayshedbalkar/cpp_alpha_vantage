@@ -26,7 +26,10 @@ void Plot::create_temp_file(const std::string &data, const std::string &file_nam
     std::ofstream out(file_name.c_str());
     out << data;
     out.close();
-    file_names.push_back(file_name);
+    if (std::find(file_names.begin(), file_names.end(), file_name) == file_names.end())
+    {
+        file_names.push_back(file_name);
+    }
 }
 
 void Plot::setup_gnuplot(Gnuplot &g) const
