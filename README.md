@@ -33,14 +33,14 @@ Stock stock2(&api, &plot, "GOOGL");
 
 4. Now, symbol data can be fetched and plotted. 
 ```c++
-stock1.fetch_data("TIME_SERIES_MONTHLY");
-stock2.fetch_data("TIME_SERIES_WEEKLY");
+stock1.fetch("TIME_SERIES_MONTHLY");
+stock2.fetch("TIME_SERIES_WEEKLY");
 
 //Show all plots on one chart
 plot.display();
 //Or show each plot on separate chart
-stock1.display_data();
-stock2.display_data();
+stock1.display();
+stock2.display();
 ```
 Note that all charts wil be shown one after another. You can put all stock objects in a `std::vector`and fetch data in a loop. Note however, that the free Alpha Vange API key only allow 5 calls at a time. 
 
