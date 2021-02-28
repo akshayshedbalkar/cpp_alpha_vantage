@@ -8,11 +8,11 @@ target_include_directories(curl_stocks
 )
 
 ##List here the source files in current directory (Good way to include sources)
-#target_sources(curl_stocks 
-#    PRIVATE 
-#        curl_stocks.cpp
-#)
+target_sources(curl_stocks 
+    PRIVATE 
+        plot.cpp
+)
 
 ##All .cpp files in this directory are source files (Quick and dirty way to include sources)
-file(GLOB SOURCES "*.cpp")
-target_sources(curl_stocks PRIVATE ${SOURCES})
+# file(GLOB SOURCES "*.cpp")
+# target_sources(curl_stocks PRIVATE ${SOURCES})
