@@ -37,6 +37,12 @@ int main()
     }
 
     // Fetch stock data
+    if (stocks.size() > 5)
+    {
+        cout << "Warning: You are trying to fetch data for more than 5 symbols at a time. This is not possible with a "
+                "free API key. Data fetched might be garbage."
+             << std::endl;
+    }
     for (auto &stock : stocks)
     {
         stock.fetch("TIME_SERIES_DAILY");
