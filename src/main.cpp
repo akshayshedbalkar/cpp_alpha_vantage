@@ -9,13 +9,13 @@ int main() {
     std::string my_apikey = "demo";
     std::string my_cert_path = "E:\\programming\\cpp\\stocks\\extern\\certs\\curl-ca-bundle.crt";
 
-    //configure alphavantage and curl. This is only required once. 
+    //configure alphavantage and curl. This is only required once.
     Api api(my_apikey, my_cert_path);
 
-    //configure gnuplot. This is required only once. 
+    //configure gnuplot. This is required only once.
     Plot plot;
 
-    //Create Stock objects. For "Demo" apikey, only IBM works. Use own key for other symbols. 
+    //Create Stock objects. For "Demo" apikey, only IBM works. Use own key for other symbols.
     Stock stock1(&api, &plot, "IBM");
     /* Stock stock2(&api, &plot, "GOOGL"); */
     /* Stock stock3(&api, &plot, "NVDA"); */
