@@ -34,7 +34,6 @@ void Plot::create_temp_file(const std::string &data, const std::string &file_nam
 
 void Plot::setup_gnuplot(Gnuplot &g) const
 {
-    g << "reset\n";
     g << "set datafile separator ','\n";
     g << "set xdata time\n";
     g << "set timefmt \"%Y-%m-%d\"\n";
