@@ -11,6 +11,7 @@ class Plot
 {
   private:
     std::vector<std::string> file_names;
+    std::string function;
 
   public:
     void display() const;
@@ -20,6 +21,7 @@ class Plot
     void process_data(std::string &s) const;
     void get_first_datapoint(Gnuplot &g, const std::string &file_name) const;
     void percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_type type) const;
+    void set_function(const std::string &function);
 
     void create_temp_file(const std::string &data, const std::string &file_name);
     void cleanup() const;

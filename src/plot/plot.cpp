@@ -34,11 +34,13 @@ void Plot::create_temp_file(const std::string &data, const std::string &file_nam
 
 void Plot::setup_gnuplot(Gnuplot &g) const
 {
+    g << "reset\n";
     g << "set datafile separator ','\n";
     g << "set xdata time\n";
     g << "set timefmt \"%Y-%m-%d\"\n";
     g << "set format x \"%m/%Y\"\n";
     g << "set ylabel \"%\"\n";
+    g << "set title \"" << function.c_str() << "\" noenhanced\n";
 }
 
 void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
@@ -48,6 +50,8 @@ void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
 
 void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_type type) const
 {
+    get_first_datapoint(g, file_name);
+
     std::string p;
     if (type == Plot_type::PLOT)
     {
@@ -67,7 +71,6 @@ void Plot::display(const std::string &file_name) const
     Gnuplot temp;
     setup_gnuplot(temp);
 
-    get_first_datapoint(temp, file_name);
     percentage_plot(temp, file_name, Plot_type::PLOT);
 }
 
@@ -79,7 +82,6 @@ void Plot::display() const
 
     for (const auto &file : file_names)
     {
-        get_first_datapoint(temp, file);
         if (i == 0)
         {
             percentage_plot(temp, file, Plot_type::PLOT);
@@ -98,6 +100,11 @@ void Plot::cleanup() const
     {
         remove(i.c_str());
     }
+}
+
+void Plot::set_function(const std::string &function)
+{
+    this->function = function;
 }
 
 Plot::~Plot()
