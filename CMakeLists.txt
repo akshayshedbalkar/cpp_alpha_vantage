@@ -24,9 +24,9 @@ target_compile_features(curl_stocks
 ##Linker options, external libraries/objects to link against
 target_link_libraries(curl_stocks 
      PRIVATE 
-     ${CMAKE_CURRENT_SOURCE_DIR}/extern/lib/libcurl.a
-     ${CMAKE_CURRENT_SOURCE_DIR}/extern/lib/libcurl.dll.a
-     ${CMAKE_CURRENT_SOURCE_DIR}/extern/lib/libutility.a
+     ${CMAKE_SOURCE_DIR}/extern/lib/libcurl.a
+     ${CMAKE_SOURCE_DIR}/extern/lib/libcurl.dll.a
+     ${CMAKE_SOURCE_DIR}/extern/lib/libutility.a
      Boost::filesystem 
      Boost::system
      Boost::iostreams
@@ -45,3 +45,5 @@ add_custom_command(TARGET curl_stocks POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different  
         "${PROJECT_SOURCE_DIR}/extern/lib/libcurl-x64.dll"      
         $<TARGET_FILE_DIR:curl_stocks>)                 
+
+configure_file(${CMAKE_SOURCE_DIR}/stocks.config ${CMAKE_BINARY_DIR}/bin/stocks.config)
