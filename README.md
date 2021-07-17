@@ -9,11 +9,6 @@ The project supports the following:
 - Time data about any symbol can be fetched and percentage change in values can be plotted
 - Time data of various symbols can be fetched and percentage change in values can be plotted on the same plot
 
-## Dependencies
-
-- curl (https://curl.haxx.se/)
-- gnuplot (http://www.gnuplot.info/)
-- boost (https://www.boost.org/)
 
 ## Building the program
 
@@ -31,6 +26,7 @@ make
 2. Execute the program. 
 
 For most usage scenarios, recompiling the program is not neccessary. Only changes to the config file are needed. 
+
 
 ## Details
 
@@ -86,4 +82,10 @@ stock2.display();
 ```
 Note that all charts wil be shown one after another. You can put all stock objects in a `std::vector`and fetch data in a loop.
 Note however, that the free Alpha Vange API key only allows 5 calls at a time. 
+
+### Dependencies
+
+- curl (https://curl.haxx.se/)
+- gnuplot (http://www.gnuplot.info/)
+- boost (https://www.boost.org/)
 
