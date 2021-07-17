@@ -40,10 +40,15 @@ set_target_properties(curl_stocks
         LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 )
 
+#Set certificate path
+set(CERT_PATH ${CMAKE_SOURCE_DIR}/extern/certs/curl-ca-bundle.crt)
+file(TO_NATIVE_PATH ${CERT_PATH} CERT_PATH)
+configure_file(${CMAKE_SOURCE_DIR}/extern/certs/cert_path.h.in ${CMAKE_SOURCE_DIR}/src/api/cert_path.h)
+
+#Copy required files to binary directory
+configure_file(${CMAKE_SOURCE_DIR}/stocks.config ${CMAKE_BINARY_DIR}/bin/stocks.config)
 
 add_custom_command(TARGET curl_stocks POST_BUILD        
     COMMAND ${CMAKE_COMMAND} -E copy_if_different  
         "${PROJECT_SOURCE_DIR}/extern/lib/libcurl-x64.dll"      
         $<TARGET_FILE_DIR:curl_stocks>)                 
-
-configure_file(${CMAKE_SOURCE_DIR}/stocks.config ${CMAKE_BINARY_DIR}/bin/stocks.config)

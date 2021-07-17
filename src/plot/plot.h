@@ -1,9 +1,9 @@
 #ifndef PLOT_H
 #define PLOT_H
 
-#include <string>
-
 #include "gnuplot-iostream.h"
+
+#include <string>
 
 enum class Plot_type;
 

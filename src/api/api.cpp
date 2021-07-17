@@ -1,8 +1,7 @@
 #include "api.h"
+#include "curl.h"
 
 #include <iostream>
-
-#include "curl.h"
 
 size_t callback(void *contents, size_t size, size_t nmemb, std::string *g)
 {

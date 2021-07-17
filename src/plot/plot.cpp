@@ -1,3 +1,4 @@
+#include "gnuplot-iostream.h"
 #include "plot.h"
 
 #include <algorithm>
@@ -6,8 +7,6 @@
 #include <numeric>
 #include <sstream>
 #include <string>
-
-#include "gnuplot-iostream.h"
 
 enum class Plot_type
 {

@@ -1,0 +1,1 @@
+#define CERT_PATH  "${CERT_PATH}"
