@@ -1,5 +1,4 @@
 #include "api.h"
-#include "cert_path.h"
 #include "plot.h"
 #include "stock.h"
 
@@ -16,9 +15,10 @@ static void read_config(const std::string &config_file_name, std::vector<std::st
 
 int main()
 {
-    constexpr Config license_config{.start = 0, .length = 7};
-    constexpr Config function_config{.start = 1, .length = 9};
-    constexpr Config stock_config{.start = 2, .length = 6};
+    constexpr Config certificate_config{.start = 0, .length = 12};
+    constexpr Config license_config{.start = 1, .length = 7};
+    constexpr Config function_config{.start = 2, .length = 9};
+    constexpr Config stock_config{.start = 3, .length = 6};
 
     // Read in config file
     std::vector<std::string> config;
@@ -34,7 +34,7 @@ int main()
     }
 
     // Get path to certificate for curl access
-    std::string my_cert_path = CERT_PATH;
+    std::string my_cert_path = config[certificate_config.start].substr(certificate_config.length);
 
     // configure alphavantage and curl. This is only required once.
     Api api(my_apikey, my_cert_path);
