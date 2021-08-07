@@ -4,9 +4,9 @@
 ##All .h files in this directory are to be included
 target_include_directories(curl_stocks 
     PRIVATE 
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/curl
-        ${CMAKE_CURRENT_SOURCE_DIR}/include/gnuplot
-)
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/curl
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/gnuplot
+    )
 
 ##List here the source files in current directory (Good way to include sources)
 #target_sources(curl_stocks 

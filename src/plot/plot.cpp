@@ -39,11 +39,13 @@ void Plot::setup_gnuplot(Gnuplot &g) const
     g << "set format x \"%m/%Y\"\n";
     g << "set ylabel \"%\"\n";
     g << "set title \"" << function.c_str() << "\" noenhanced\n";
+    g << "set terminal qt size 1600,1000\n";
+    g << "set grid\n";
 }
 
 void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
 {
-    g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $5}' " << file_name.c_str() << "\")\n";
+    g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $6}' " << file_name.c_str() << "\")\n";
 }
 
 void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_type type) const
@@ -60,7 +62,7 @@ void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_
         p = "replot";
     }
 
-    g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($5-first_" << file_name.c_str() << ")*100/first_"
+    g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($6-first_" << file_name.c_str() << ")*100/first_"
       << file_name.c_str() << ") with lines title \"" << file_name.c_str() << "\"\n";
 }
 
