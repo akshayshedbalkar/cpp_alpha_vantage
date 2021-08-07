@@ -45,7 +45,7 @@ void Plot::setup_gnuplot(Gnuplot &g) const
 
 void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
 {
-    g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $6}' " << file_name.c_str() << "\")\n";
+    g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $" << csv_column << "}' " << file_name.c_str() << "\")\n";
 }
 
 void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_type type) const
@@ -62,7 +62,7 @@ void Plot::percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_
         p = "replot";
     }
 
-    g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($6-first_" << file_name.c_str() << ")*100/first_"
+    g << p.c_str() << " \"" << file_name.c_str() << "\" using 1:(($" << csv_column << "-first_" << file_name.c_str() << ")*100/first_"
       << file_name.c_str() << ") with lines title \"" << file_name.c_str() << "\"\n";
 }
 
