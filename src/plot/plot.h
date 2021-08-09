@@ -12,9 +12,13 @@ class Plot
   private:
     std::vector<std::string> file_names;
     std::string function;
-    static constexpr int csv_column{6};
+    static std::string csv_column_name;
+    static int csv_column;
 
   public:
+    Plot();
+    Plot(std::string &s);
+
     void display() const;
     void display(const std::string &s) const;
 

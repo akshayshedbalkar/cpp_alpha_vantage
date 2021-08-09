@@ -14,8 +14,24 @@ enum class Plot_type
     REPLOT = 1
 };
 
+int Plot::csv_column{0};
+std::string Plot::csv_column_name{""};
+
+Plot::Plot()
+{
+}
+
+Plot::Plot(std::string &s)
+{
+    csv_column_name = s;
+}
+
 void Plot::process_data(std::string &s) const
 {
+    size_t pos = s.find(csv_column_name);
+    auto s_end = std::next(s.begin(), pos);
+    csv_column = static_cast<int>(std::count(s.begin(), s_end, ',')) + 1;
+
     s.insert(0, "#");
     s.erase(std::remove(s.begin(), s.end(), '\r'), s.end());
 }
