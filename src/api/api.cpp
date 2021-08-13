@@ -33,6 +33,7 @@ void Api::fetch(const std::string &function, const std::string &symbol, std::str
     curl_easy_setopt(api_handle, CURLOPT_URL, url.c_str());
     curl_easy_setopt(api_handle, CURLOPT_WRITEDATA, &stock_data);
     curl_easy_setopt(api_handle, CURLOPT_WRITEFUNCTION, callback);
+    curl_easy_setopt(api_handle, CURLOPT_FOLLOWLOCATION, 1L);
 
     curl_result = curl_easy_perform(api_handle);
 
