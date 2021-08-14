@@ -61,6 +61,7 @@ void Plot::setup_gnuplot(Gnuplot &g) const
 
 void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
 {
+    /* g<< " system(\"awk -i inplace 'NR<=30' "<< file_name.c_str()<<"\")\n"; */ /* use this to plot from vertain date */
     g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $" << csv_column << "}' " << file_name.c_str() << "\")\n";
 }
 
