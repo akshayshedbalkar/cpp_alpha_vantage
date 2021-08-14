@@ -27,6 +27,10 @@ void Api::fetch(const std::string &function, const std::string &symbol, std::str
     std::string url = base_url;
     url += "function=" + function;
     url += "&symbol=" + symbol;
+    if(function == "TIME_SERIES_INTRADAY")
+    {
+        url += "&interval=5min";
+    }
     url += "&apikey=" + apikey;
     url += "&datatype=csv";
 
