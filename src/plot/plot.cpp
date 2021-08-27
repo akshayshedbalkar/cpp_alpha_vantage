@@ -35,6 +35,12 @@ float Plot::get_time_in_weeks() const
 
 void Plot::process_data(std::string &s) const
 {
+    std::string test = "Thank";
+    if(s.find(test) != std::string::npos)
+    {
+        throw "Too many or too frequent API calls. Wait a bit and try again.\n";
+        throw -1;
+    }
     size_t pos = s.find(csv_column_name);
     auto s_end = std::next(s.begin(), pos);
     csv_column = static_cast<int>(std::count(s.begin(), s_end, ',')) + 1;
