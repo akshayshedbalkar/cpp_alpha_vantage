@@ -1,4 +1,5 @@
 #include "api.h"
+#include "plot.h"
 #include "curl.h"
 
 #include <iostream>
@@ -32,6 +33,12 @@ void Api::fetch(const std::string &function, const std::string &symbol, std::str
         url += "&interval=5min";
     }
     url += "&apikey=" + apikey;
+    Plot p;
+    constexpr int days_in_a_week = 6;
+    if(p.get_time_in_weeks() * days_in_a_week >= 100)
+    {
+        url += "&outputsize=full";
+    }
     url += "&datatype=csv";
 
     curl_easy_setopt(api_handle, CURLOPT_URL, url.c_str());

@@ -28,6 +28,11 @@ Plot::Plot(std::string &s, float time)
     time_in_weeks = time;
 }
 
+float Plot::get_time_in_weeks() const
+{
+    return time_in_weeks;
+}
+
 void Plot::process_data(std::string &s) const
 {
     size_t pos = s.find(csv_column_name);
