@@ -19,7 +19,8 @@ int main()
     constexpr Config license_config{.start = 1, .length = 7};
     constexpr Config function_config{.start = 2, .length = 9};
     constexpr Config csv_column_config{.start = 3, .length = 7};
-    constexpr Config stock_config{.start = 4, .length = 6};
+    constexpr Config time_config{.start = 4, .length = 5};
+    constexpr Config stock_config{.start = 5, .length = 6};
 
     // Read in config file
     std::vector<std::string> config;
@@ -42,7 +43,8 @@ int main()
 
     // configure gnuplot. This is required only once.
     std::string csv_column = config[csv_column_config.start].substr(csv_column_config.length);
-    Plot plot(csv_column);
+    float time = std::stof(config[time_config.start].substr(time_config.length));
+    Plot plot(csv_column, time);
 
     // Get stock names from config file and create Stock objects
     std::vector<std::string> stock_names(config.begin() + stock_config.start, config.end());

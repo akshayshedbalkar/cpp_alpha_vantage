@@ -15,15 +15,17 @@ enum class Plot_type
 };
 
 int Plot::csv_column{0};
+float Plot::time_in_weeks{0.0};
 std::string Plot::csv_column_name{""};
 
 Plot::Plot()
 {
 }
 
-Plot::Plot(std::string &s)
+Plot::Plot(std::string &s, float time)
 {
     csv_column_name = s;
+    time_in_weeks = time;
 }
 
 void Plot::process_data(std::string &s) const
@@ -52,7 +54,7 @@ void Plot::setup_gnuplot(Gnuplot &g) const
     g << "set datafile separator ','\n";
     g << "set xdata time\n";
     g << "set timefmt \"%Y-%m-%d\"\n";
-    g << "set format x \"%m/%Y\"\n";
+    g << "set format x \"%d/%m/%y\"\n";
     g << "set ylabel \"%\"\n";
     g << "set title \"" << function.c_str() << "\" noenhanced\n";
     g << "set terminal qt size 1600,1000\n";
@@ -61,7 +63,8 @@ void Plot::setup_gnuplot(Gnuplot &g) const
 
 void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
 {
-    /* g<< " system(\"awk -i inplace 'NR<=30' "<< file_name.c_str()<<"\")\n"; */ /* use this to plot from vertain date */
+    constexpr int days_in_a_week = 6;
+    g<< " system(\"awk -i inplace 'NR<="<< static_cast<int>(days_in_a_week * time_in_weeks) <<"' "<< file_name.c_str()<<"\")\n"; //  use this to plot from certain date
     g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $" << csv_column << "}' " << file_name.c_str() << "\")\n";
 }
 

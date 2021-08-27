@@ -14,10 +14,11 @@ class Plot
     std::string function;
     static std::string csv_column_name;
     static int csv_column;
+    static float time_in_weeks;
 
   public:
     Plot();
-    Plot(std::string &s);
+    Plot(std::string &s, float time);
 
     void display() const;
     void display(const std::string &s) const;
