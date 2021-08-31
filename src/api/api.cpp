@@ -6,7 +6,7 @@
 
 size_t callback(void *contents, size_t size, size_t nmemb, std::string *g)
 {
-    size_t newLength = size * nmemb;
+    size_t newLength{size * nmemb};
     g->append((char *)contents, newLength);
     return newLength;
 }
@@ -25,7 +25,8 @@ Api::Api(std::string apikey, std::string cert_path)
 
 void Api::fetch(const std::string &function, const std::string &symbol, std::string &stock_data)
 {
-    std::string url = base_url;
+    std::string url{base_url};
+
     url += "function=" + function;
     url += "&symbol=" + symbol;
     if(function == "TIME_SERIES_INTRADAY")
@@ -33,12 +34,13 @@ void Api::fetch(const std::string &function, const std::string &symbol, std::str
         url += "&interval=5min";
     }
     url += "&apikey=" + apikey;
-    Plot p;
-    constexpr int days_in_a_week = 6;
-    if(p.get_time_in_weeks() * days_in_a_week >= 100)
+
+    constexpr int days_in_a_week{6}, max_days_in_compact_call{100};
+    if(Plot::get_time_in_weeks() * days_in_a_week >= max_days_in_compact_call)
     {
         url += "&outputsize=full";
     }
+
     url += "&datatype=csv";
 
     curl_easy_setopt(api_handle, CURLOPT_URL, url.c_str());
@@ -50,7 +52,9 @@ void Api::fetch(const std::string &function, const std::string &symbol, std::str
 
     if (curl_result != CURLE_OK)
     {
-        std::cerr << "curl_easy_perform() failed:" << curl_easy_strerror(curl_result) << "\n";
+        throw "curl_easy_perform() failed.";
+        throw curl_easy_strerror(curl_result);
+        throw -1;
     }
 }
 

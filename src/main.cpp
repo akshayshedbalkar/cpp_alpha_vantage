@@ -1,56 +1,35 @@
 #include "api.h"
+#include "config.h"
 #include "plot.h"
 #include "stock.h"
 
 #include <iostream>
 #include <string>
 
-struct Config
-{
-    int start;
-    int length;
-};
-
-static void read_config(const std::string &config_file_name, std::vector<std::string> &config);
-
 int main()
 {
-    try 
+    try
     {
-        constexpr Config certificate_config{.start = 0, .length = 12};
-        constexpr Config license_config{.start = 1, .length = 7};
-        constexpr Config function_config{.start = 2, .length = 9};
-        constexpr Config csv_column_config{.start = 3, .length = 7};
-        constexpr Config time_config{.start = 4, .length = 5};
-        constexpr Config stock_config{.start = 5, .length = 6};
-
         // Read in config file
-        std::vector<std::string> config;
-        read_config("stocks.config", config);
+        Config::read_config("stocks.config");
 
-        // Get license information from config file
-        std::string my_apikey = "demo";
-        my_apikey = config[license_config.start].substr(license_config.length);
+        // Initialize config objects
+        Config certificate_config{0, 12}, license_config{1, 7}, function_config{2, 9}, csv_column_config{3, 7}, time_config{4, 5}, stock_config{5, 6};
 
-        if (my_apikey == "demo")
+        // Configure alphavantage and curl. This is only required once.
+        Api api(license_config.get_config(), certificate_config.get_config());
+
+        if (license_config.get_config() == "demo")
         {
             throw "Warning: You are using API key \"demo\". Stocks other than IBM might not work.";
         }
 
-        // Get path to certificate for curl access
-        std::string my_cert_path = config[certificate_config.start].substr(certificate_config.length);
-
-        // configure alphavantage and curl. This is only required once.
-        Api api(my_apikey, my_cert_path);
-
         // configure gnuplot. This is required only once.
-        std::string csv_column = config[csv_column_config.start].substr(csv_column_config.length);
-        float time = std::stof(config[time_config.start].substr(time_config.length));
-        Plot plot(csv_column, time);
+        Plot plot(csv_column_config.get_config(), std::stof(time_config.get_config()));
 
         // Get stock names from config file and create Stock objects
-        std::vector<std::string> stock_names(config.begin() + stock_config.start, config.end());
-        std::for_each(stock_names.begin(), stock_names.end(), [](std::string &s) { s = s.substr(stock_config.length); });
+        std::vector<std::string> stock_names(Config::begin() + stock_config.get_start(), Config::end());
+        std::for_each(stock_names.begin(), stock_names.end(), [&](std::string &s) { s = s.substr(stock_config.get_length()); });
 
         std::vector<Stock> stocks;
         for (const auto &stock_name : stock_names)
@@ -60,15 +39,13 @@ int main()
 
         if (stocks.size() > 5)
         {
-            throw  "Warning: You are trying to fetch data for more than 5 symbols at a time. This is not possible with a free API key.";
+            throw "Warning: You are trying to fetch data for more than 5 symbols at a time. This is not possible with a free API key.";
         }
 
-        // Get time function from config file and fetch stock data
-        std::string time_function = config[function_config.start].substr(function_config.length);
-
+        // Fetch stock data
         for (auto &stock : stocks)
         {
-            stock.fetch(time_function);
+            stock.fetch(function_config.get_config());
         }
 
         // show each plot of separate chart
@@ -81,9 +58,9 @@ int main()
         plot.display();
     }
 
-    catch (char const *s)
+    catch (const char *s)
     {
-        std::cerr<<s;
+        std::cerr << s;
     }
 
     catch (int i)
@@ -92,11 +69,4 @@ int main()
     }
 
     return 0;
-}
-
-static void read_config(const std::string &config_file_name, std::vector<std::string> &config)
-{
-    std::ifstream config_file(config_file_name.c_str());
-    std::copy(std::istream_iterator<std::string>(config_file), std::istream_iterator<std::string>(),
-              back_inserter(config));
 }

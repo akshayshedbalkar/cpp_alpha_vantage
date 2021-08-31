@@ -1,8 +1,5 @@
 ##Following subdirectories are part of the project
-add_subdirectory(stock)
-add_subdirectory(api)
-add_subdirectory(plot)
-add_subdirectory(config)
+# add_subdirectory(blabla)
 
 ##All .h files in this directory are to be included
 target_include_directories(curl_stocks 
@@ -10,10 +7,10 @@ target_include_directories(curl_stocks
     ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
-#List here the source files in current directory (Good way to include sources)
+##List here the source files in current directory (Good way to include sources)
 target_sources(curl_stocks 
     PRIVATE 
-    main.cpp
+    config.cpp
     )
 
 ##All .cpp files in this directory are source files (Quick and dirty way to include sources)

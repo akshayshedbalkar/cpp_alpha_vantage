@@ -22,25 +22,26 @@ Plot::Plot()
 {
 }
 
-Plot::Plot(std::string &s, float time)
+Plot::Plot(std::string s, float time)
 {
     csv_column_name = s;
     time_in_weeks = time;
 }
 
-float Plot::get_time_in_weeks() const
+float Plot::get_time_in_weeks() 
 {
     return time_in_weeks;
 }
 
 void Plot::process_data(std::string &s) const
 {
-    std::string test = "Thank";
+    std::string test{"Thank"};
     if(s.find(test) != std::string::npos)
     {
         throw "Too many or too frequent API calls. Wait a bit and try again.\n";
         throw -1;
     }
+
     size_t pos = s.find(csv_column_name);
     auto s_end = std::next(s.begin(), pos);
     csv_column = static_cast<int>(std::count(s.begin(), s_end, ',')) + 1;
@@ -74,7 +75,7 @@ void Plot::setup_gnuplot(Gnuplot &g) const
 
 void Plot::get_first_datapoint(Gnuplot &g, const std::string &file_name) const
 {
-    constexpr int days_in_a_week = 6;
+    constexpr int days_in_a_week{6};
     g<< " system(\"awk -i inplace 'NR<="<< static_cast<int>(days_in_a_week * time_in_weeks) <<"' "<< file_name.c_str()<<"\")\n"; //  use this to plot from certain date
     g << " first_" << file_name.c_str() << "=system(\"awk -F',' 'END {print $" << csv_column << "}' " << file_name.c_str() << "\")\n";
 }
@@ -109,7 +110,7 @@ void Plot::display() const
 {
     Gnuplot temp;
     setup_gnuplot(temp);
-    int i = 0;
+    int i{0};
 
     for (const auto &file : file_names)
     {

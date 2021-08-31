@@ -18,7 +18,9 @@ class Plot
 
   public:
     Plot();
-    Plot(std::string &s, float time);
+    Plot(std::string s, float time);
+
+    static float get_time_in_weeks();
 
     void display() const;
     void display(const std::string &s) const;
@@ -26,7 +28,6 @@ class Plot
     void setup_gnuplot(Gnuplot &g) const;
     void process_data(std::string &s) const;
     void get_first_datapoint(Gnuplot &g, const std::string &file_name) const;
-    float get_time_in_weeks() const ;
     void percentage_plot(Gnuplot &g, const std::string &file_name, const Plot_type type) const;
     void set_function(const std::string &function);
 
