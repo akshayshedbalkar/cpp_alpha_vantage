@@ -21,10 +21,16 @@ class Config
 
     std::string get_config();
 
-    static void read_config(const std::string &config_file_name);
-    static auto begin() {return config_data.begin();}
-    static auto end() {return config_data.end();}
+    static void read(const std::string &config_file_name);
+
+    static auto begin()
+    {
+        return config_data.begin();
+    }
+    static auto end()
+    {
+        return config_data.end();
+    }
 };
 
 #endif /* ifndef CONFIG_H */
-

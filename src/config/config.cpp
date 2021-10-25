@@ -1,7 +1,7 @@
 #include "config.h"
 
-#include <fstream>
 #include <algorithm>
+#include <fstream>
 
 std::vector<std::string> Config::config_data{};
 
@@ -27,7 +27,7 @@ Config::Config(int s, int l) : start{s}, length{l}
 {
 }
 
-void Config::read_config(const std::string &config_file_name)
+void Config::read(const std::string &config_file_name)
 {
     std::ifstream config_file(config_file_name.c_str());
     std::copy(std::istream_iterator<std::string>(config_file), std::istream_iterator<std::string>(), back_inserter(config_data));
