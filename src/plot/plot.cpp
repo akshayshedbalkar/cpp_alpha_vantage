@@ -39,7 +39,6 @@ void Plot::process_data(std::string &s) const
     if (s.find(test) != std::string::npos)
     {
         throw "Too many or too frequent API calls. Wait a bit and try again.\n";
-        throw -1;
     }
 
     size_t pos = s.find(csv_column_name);

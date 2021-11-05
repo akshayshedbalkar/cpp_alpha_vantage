@@ -14,7 +14,7 @@ int main()
         Config::read("stocks.config");
 
         // Initialize config objects
-        Config certificate{0, 12}, license{1, 7}, function{2, 9}, csv_column{3, 7}, time{4, 5}, stock_config{5, 6};
+        Config certificate{0, 12}, license{1, 8}, function{2, 9}, csv_column{3, 7}, time{4, 5}, stock_config{5, 6};
 
         // Configure alphavantage and curl. This is only required once.
         Api api(license.get_config(), certificate.get_config());
@@ -39,7 +39,7 @@ int main()
 
         if (stocks.size() > 5)
         {
-            throw "Warning: You are trying to fetch data for more than 5 symbols at a time. This is not possible with a free API key.";
+            /* throw "Warning: You are trying to fetch data for more than 5 symbols at a time. This is not possible with a free API key."; */
         }
 
         // Fetch stock data
