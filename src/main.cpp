@@ -3,8 +3,10 @@
 #include "plot.h"
 #include "stock.h"
 
+#include <chrono>
 #include <iostream>
 #include <string>
+#include <thread>
 
 int main()
 {
@@ -39,12 +41,23 @@ int main()
 
         if (stocks.size() > 5)
         {
-            /* throw "Warning: You are trying to fetch data for more than 5 symbols at a time. This is not possible with a free API key."; */
+            std::cout << "Warning: You are trying to fetch data for more than 5 symbols at a time. The program will wait 60 seconds after each set "
+                         "of 5 API calls.";
         }
 
         // Fetch stock data
+        int number_of_stocks{0};
+        constexpr int limit{4};
         for (auto &stock : stocks)
         {
+            if (number_of_stocks++ > limit)
+            {
+                number_of_stocks = 0;
+
+                using namespace std::chrono_literals;
+                std::this_thread::sleep_for(60s);
+            }
+
             stock.fetch(function.get_config());
         }
 
