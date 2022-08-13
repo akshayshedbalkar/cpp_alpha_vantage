@@ -1,32 +1,37 @@
 #include "api.h"
 
-#include "curl.h"  // for curl_easy_setopt, CURLE_OK, curl_easy_cleanup, cur...
-#include "plot.h"  // for Plot
+#include "curl.h" // for curl_easy_setopt, CURLE_OK, curl_easy_cleanup, cur...
+#include "plot.h" // for Plot
 
-size_t callback(void* contents, size_t size, size_t nmemb, std::string* g)
+size_t
+callback(void *contents, size_t size, size_t nmemb, std::string *g)
 {
-  size_t newLength{size * nmemb};
-  g->append((char*)contents, newLength);
+  size_t newLength{ size * nmemb };
+  g->append((char *)contents, newLength);
   return newLength;
 }
 
-Api::Api() : Api{"demo", "C:\\curl-ca-bundle.crt"} {}
+Api::Api()
+  : Api{ "demo", "C:\\curl-ca-bundle.crt" }
+{
+}
 
 Api::Api(std::string apikey, std::string cert_path)
-    : curl_result{CURLE_OK},
-      apikey{apikey},
-      base_url{"https://www.alphavantage.co/query?"}
+  : curl_result{ CURLE_OK }
+  , apikey{ apikey }
+  , base_url{ "https://www.alphavantage.co/query?" }
 {
   curl_global_init(CURL_GLOBAL_ALL);
   api_handle = curl_easy_init();
   curl_easy_setopt(api_handle, CURLOPT_CAINFO, cert_path.c_str());
 }
 
-void Api::fetch(std::string const& function,
-                std::string const& symbol,
-                std::string& stock_data)
+void
+Api::fetch(std::string const &function,
+           std::string const &symbol,
+           std::string &stock_data)
 {
-  std::string url{base_url};
+  std::string url{ base_url };
 
   url += "function=" + function;
   url += "&symbol=" + symbol;
@@ -36,7 +41,7 @@ void Api::fetch(std::string const& function,
   }
   url += "&apikey=" + apikey;
 
-  constexpr int days_in_a_week{6}, max_days_in_compact_call{100};
+  constexpr int days_in_a_week{ 6 }, max_days_in_compact_call{ 100 };
   if (Plot::get_time_in_weeks() * days_in_a_week >= max_days_in_compact_call)
   {
     url += "&outputsize=full";

@@ -1,24 +1,24 @@
 #ifndef STOCK_H
 #define STOCK_H
 
-#include <string>  // for string
+#include <string> // for string
 
 class Api;
 class Plot;
 
 class Stock
 {
- private:
-  Api* api;
-  Plot* plot;
+private:
+  Api *api;
+  Plot *plot;
   std::string stock_data;
   std::string symbol;
 
- public:
+public:
   Stock();
-  Stock(Api* a, Plot* p, std::string const& s);
+  Stock(Api *a, Plot *p, std::string const &s);
 
-  void fetch(std::string const& function);
+  void fetch(std::string const &function);
   void display() const;
 };
 

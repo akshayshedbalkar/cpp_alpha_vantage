@@ -6,13 +6,13 @@
 
 class Config
 {
- private:
+private:
   int start;
   int length;
 
   static std::vector<std::string> config_data;
 
- public:
+public:
   Config();
   Config(int s, int l);
 
@@ -21,7 +21,7 @@ class Config
 
   std::string get_config();
 
-  static void read(std::string const& config_file_name);
+  static void read(std::string const &config_file_name);
 
   static auto begin() { return config_data.begin(); }
   static auto end() { return config_data.end(); }
