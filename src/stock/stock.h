@@ -1,5 +1,6 @@
 #ifndef STOCK_H
 #define STOCK_H
+
 #include <string>  // for string
 
 class Api;
