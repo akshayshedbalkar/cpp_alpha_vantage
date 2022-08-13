@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <fstream>
+#include <iterator>
 
 std::vector<std::string> Config::config_data{};
 
