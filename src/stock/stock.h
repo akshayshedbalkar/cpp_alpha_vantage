@@ -8,18 +8,18 @@ class Plot;
 
 class Stock
 {
-  private:
-    Api *api;
-    Plot *plot;
-    std::string stock_data;
-    std::string symbol;
+ private:
+  Api* api;
+  Plot* plot;
+  std::string stock_data;
+  std::string symbol;
 
-  public:
-    Stock();
-    Stock(Api *a, Plot *p, const std::string &s);
+ public:
+  Stock();
+  Stock(Api* a, Plot* p, std::string const& s);
 
-    void fetch(const std::string &function);
-    void display() const;
+  void fetch(std::string const& function);
+  void display() const;
 };
 
 #endif /* ifndef STOCK_H */

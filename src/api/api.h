@@ -4,28 +4,32 @@
 #include <stddef.h>  // for size_t
 #include <string>    // for string
 
-#include "curl.h"    // for CURL, CURLcode
+#include "curl.h"  // for CURL, CURLcode
 
-size_t callback(void *contents, size_t size, size_t nmemb,
-                std::string *s); // Member function pointer is different than
-                                 // ordinary function pointer
+size_t callback(void* contents,
+                size_t size,
+                size_t nmemb,
+                std::string* s);  // Member function pointer is different than
+                                  // ordinary function pointer
 
 class Api
 {
-  private:
-    CURL *api_handle;
-    CURLcode curl_result;
+ private:
+  CURL* api_handle;
+  CURLcode curl_result;
 
-    std::string apikey;
-    std::string base_url;
+  std::string apikey;
+  std::string base_url;
 
-  public:
-    Api();
-    Api(std::string apikey, std::string cert_path);
+ public:
+  Api();
+  Api(std::string apikey, std::string cert_path);
 
-    void fetch(const std::string &function, const std::string &symbol, std::string &stock_data);
+  void fetch(std::string const& function,
+             std::string const& symbol,
+             std::string& stock_data);
 
-    ~Api();
+  ~Api();
 };
 
 #endif /* ifndef API_H */
