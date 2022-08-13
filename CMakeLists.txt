@@ -18,6 +18,11 @@ target_compile_features(curl_stocks
     PRIVATE 
     cxx_std_20
     )
+target_compile_options(curl_stocks
+    PRIVATE
+    # -fsanitize=address
+    # -fsanitize=undefined
+    )
 
 ##Linker options, external libraries/objects to link against
 find_package(Boost COMPONENTS filesystem system iostreams)
@@ -30,7 +35,11 @@ target_link_libraries(curl_stocks
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     target_link_libraries(curl_stocks 
-        PRIVATE -lcurl)
+        PRIVATE 
+        -lcurl
+        # -fsanitize=address
+        # -fsanitize=undefined
+        )
 elseif(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     target_link_libraries(curl_stocks 
         PRIVATE

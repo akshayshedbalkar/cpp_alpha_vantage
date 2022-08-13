@@ -37,7 +37,7 @@ The format of the config file is a simple key:value syntax. The order of key:val
 CERTIFICATE:<path to project>/extern/certs/curl-ca-bundle.crt
 LICENSE:DEMO12345
 FUNCTION:TIME_SERIES_DAILY
-COLUMN:adjusted_close
+COLUMN:adjusted
 TIME:4
 STOCK:NVDA
 STOCK:GOOGL
