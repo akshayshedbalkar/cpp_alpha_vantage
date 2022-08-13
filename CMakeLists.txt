@@ -5,6 +5,7 @@ project(curl_stocks)
 set(CMAKE_BUILD_TYPE Release)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES OFF)
+set(CMAKE_CXX_INCLUDE_WHAT_YOU_USE include-what-you-use)
 
 ##Define executables, libraries here with relative path
 add_executable(curl_stocks src/main.cpp)
@@ -20,6 +21,7 @@ target_compile_features(curl_stocks
     )
 target_compile_options(curl_stocks
     PRIVATE
+    -O3
     # -fsanitize=address
     # -fsanitize=undefined
     )

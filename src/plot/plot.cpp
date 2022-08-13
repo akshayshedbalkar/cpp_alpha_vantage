@@ -1,12 +1,11 @@
-#include "gnuplot-iostream.h"
-#include "plot.h"
+#include <stdio.h>             // for remove, size_t
+#include <algorithm>           // for count, find, remove
+#include <iostream>            // for operator<<, basic_ostream, basic_ostre...
+#include <iterator>            // for next
+#include <string>              // for string, char_traits, basic_string, all...
 
-#include <algorithm>
-#include <iostream>
-#include <iterator>
-#include <numeric>
-#include <sstream>
-#include <string>
+#include "gnuplot-iostream.h"  // for Gnuplot
+#include "plot.h"
 
 enum class Plot_type
 {

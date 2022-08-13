@@ -1,9 +1,9 @@
 #ifndef STOCK_H
 #define STOCK_H
-#include <string>
+#include <string>  // for string
 
-#include "api.h"
-#include "plot.h"
+class Api;
+class Plot;
 
 class Stock
 {

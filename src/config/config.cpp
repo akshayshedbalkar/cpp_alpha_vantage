@@ -1,8 +1,9 @@
 #include "config.h"
 
-#include <algorithm>
-#include <fstream>
-#include <iterator>
+#include <algorithm>  // for copy
+#include <fstream>    // for basic_istream, ifstream
+#include <iterator>   // for istream_iterator, back_insert_iterator, operator==
+#include <memory>     // for allocator_traits<>::value_type
 
 std::vector<std::string> Config::config_data{};
 

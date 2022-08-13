@@ -1,8 +1,7 @@
 #include "api.h"
-#include "curl.h"
-#include "plot.h"
 
-#include <iostream>
+#include "curl.h"  // for curl_easy_setopt, CURLE_OK, curl_easy_cleanup, cur...
+#include "plot.h"  // for Plot
 
 size_t callback(void *contents, size_t size, size_t nmemb, std::string *g)
 {

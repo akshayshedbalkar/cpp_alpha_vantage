@@ -1,9 +1,10 @@
 #ifndef API_H
 #define API_H
 
-#include "curl.h"
+#include <stddef.h>  // for size_t
+#include <string>    // for string
 
-#include <string>
+#include "curl.h"    // for CURL, CURLcode
 
 size_t callback(void *contents, size_t size, size_t nmemb,
                 std::string *s); // Member function pointer is different than

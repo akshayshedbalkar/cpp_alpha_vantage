@@ -1,9 +1,10 @@
 #ifndef PLOT_H
 #define PLOT_H
 
-#include "gnuplot-iostream.h"
+#include <string>              // for string
+#include <vector>              // for vector
 
-#include <string>
+#include "gnuplot-iostream.h"  // for Gnuplot
 
 enum class Plot_type;
 

@@ -1,12 +1,15 @@
-#include "api.h"
-#include "config.h"
-#include "plot.h"
-#include "stock.h"
+#include <bits/chrono.h>  // for operator""s, chrono_literals
+#include <stdlib.h>       // for exit
+#include <algorithm>      // for for_each
+#include <iostream>       // for operator<<, ostream, cerr, cout
+#include <string>         // for string, allocator, operator==, stof
+#include <thread>         // for sleep_for
+#include <vector>         // for vector
 
-#include <chrono>
-#include <iostream>
-#include <string>
-#include <thread>
+#include "api.h"          // for Api
+#include "config.h"       // for Config
+#include "plot.h"         // for Plot
+#include "stock.h"        // for Stock
 
 int main()
 {

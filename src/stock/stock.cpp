@@ -1,6 +1,7 @@
 #include "stock.h"
 
-#include <iostream>
+#include "api.h"   // for Api
+#include "plot.h"  // for Plot
 
 Stock::Stock()
 {
