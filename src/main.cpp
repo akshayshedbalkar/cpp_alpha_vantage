@@ -19,9 +19,18 @@ main()
     // Read in config file
     Config::read("stocks.config");
 
+    // Constants for identifiers
+    constexpr int certificate_id = sizeof("certificate");
+    constexpr int license_id = sizeof("license");
+    constexpr int function_id = sizeof("function");
+    constexpr int csv_column_id = sizeof("column");
+    constexpr int time_id = sizeof("time");
+    constexpr int stock_config_id = sizeof("stock");
+
     // Initialize config objects
-    Config certificate{ 0, 12 }, license{ 1, 8 }, function{ 2, 9 },
-      csv_column{ 3, 7 }, time{ 4, 5 }, stock_config{ 5, 6 };
+    Config certificate{ 0, certificate_id }, license{ 1, license_id },
+      function{ 2, function_id }, csv_column{ 3, csv_column_id },
+      time{ 4, time_id }, stock_config{ 5, stock_config_id };
 
     // Configure alphavantage and curl. This is only required once.
     Api api(license.get_config(), certificate.get_config());

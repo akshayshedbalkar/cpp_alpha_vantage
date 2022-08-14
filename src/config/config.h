@@ -18,7 +18,7 @@ class Config
 {
 private:
   int start;  /*!<Position from top (line number). Starts at 0.  */
-  int length; /*!< Length of identifier, including the colon. */
+  int length; /*!< Length of identifier. */
 
   static std::vector<std::string>
     config_data; /*!< An array of strings holding the configuration items
@@ -33,7 +33,7 @@ public:
    * @brief Constructor
    *
    * @param s Start: Position from top (line number). Starts at 0.
-   * @param l Length: Length of identifier, including the colon:
+   * @param l Length: Length of identifier.
    */
   Config(int s, int l);
 
@@ -46,7 +46,7 @@ public:
   /**
    * @brief Get length of identifier
    *
-   * @return Length: Length of identifier, including the colon:
+   * @return Length: Length of identifier.
    */
   int get_length();
 
