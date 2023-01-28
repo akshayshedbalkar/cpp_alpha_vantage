@@ -2,8 +2,8 @@
  * @file config.h
  * @brief Config class
  * @author Akshay Shedbalkar
- * @version 1.0
- * @date 2022-08-13
+ * @defgroup Config
+ * @{
  */
 #ifndef CONFIG_H
 #define CONFIG_H
@@ -79,3 +79,4 @@ public:
 };
 
 #endif /* ifndef CONFIG_H */
+/* @}*/

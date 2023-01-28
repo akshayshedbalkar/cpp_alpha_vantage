@@ -2,8 +2,8 @@
  * @file stock.h
  * @brief Stock class
  * @author Akshay Shedbalkar
- * @version 1.0
- * @date 2022-08-13
+ * @defgroup Stock
+ * @{
  */
 #ifndef STOCK_H
 #define STOCK_H
@@ -51,3 +51,4 @@ public:
 };
 
 #endif /* ifndef STOCK_H */
+/* @}*/

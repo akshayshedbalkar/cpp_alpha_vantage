@@ -2,8 +2,8 @@
  * @file plot.h
  * @brief Plot class
  * @author Akshay Shedbalkar
- * @version 1.0
- * @date 2022-08-13
+ * @defgroup Plot
+ * @{
  */
 #ifndef PLOT_H
 #define PLOT_H
@@ -123,3 +123,4 @@ public:
 };
 
 #endif /* ifndef PLOT_H */
+/* @}*/

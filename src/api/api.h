@@ -2,8 +2,8 @@
  * @file api.h
  * @brief Api class
  * @author Akshay Shedbalkar
- * @version 1.0
- * @date 2022-08-13
+ * @defgroup API
+ * @{
  */
 
 #ifndef API_H
@@ -80,3 +80,4 @@ public:
 };
 
 #endif /* ifndef API_H */
+/* @}*/
