@@ -1,0 +1,5 @@
+<map id="Api::fetch" name="Api::fetch">
+<area shape="rect" id="node1" title="Fetch stock data." alt="" coords="5,31,89,56"/>
+<area shape="rect" id="node2" href="$group__API.html#ga12f3d2303d66828fb24f063ed6277d35" title="A call back function to be used with curl." alt="" coords="190,5,266,31"/>
+<area shape="rect" id="node3" href="$group__Plot.html#gaaa6473d0c9cb6ee9409c20767ef6866f" title="Getter." alt="" coords="137,55,319,80"/>
+</map>

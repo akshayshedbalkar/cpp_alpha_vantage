@@ -1,0 +1,4 @@
+<map id="Plot::create_temp_file" name="Plot::create_temp_file">
+<area shape="rect" id="node1" title="Create a file to store stock data. Will be deleted at end of program." alt="" coords="152,5,316,31"/>
+<area shape="rect" id="node2" href="$group__Stock.html#ga79f9d23a26828d67d22357a92266e52a" title="Fetch historical stock data." alt="" coords="5,5,104,31"/>
+</map>

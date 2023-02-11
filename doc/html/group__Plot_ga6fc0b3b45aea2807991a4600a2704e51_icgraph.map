@@ -1,0 +1,4 @@
+<map id="Plot::percentage_plot" name="Plot::percentage_plot">
+<area shape="rect" id="node1" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="156,5,316,31"/>
+<area shape="rect" id="node2" href="$group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="5,5,108,31"/>
+</map>

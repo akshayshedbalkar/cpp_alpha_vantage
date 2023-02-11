@@ -1,0 +1,9 @@
+<map id="Stock::fetch" name="Stock::fetch">
+<area shape="rect" id="node1" title="Fetch historical stock data." alt="" coords="5,80,104,105"/>
+<area shape="rect" id="node2" href="$group__Plot.html#gad697f2e80fea90d1e91b0d9cdacfce33" title="Create a file to store stock data. Will be deleted at end of program." alt="" coords="152,5,316,31"/>
+<area shape="rect" id="node3" href="$group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="192,55,276,80"/>
+<area shape="rect" id="node6" href="$group__Plot.html#gabaa88bf342f42c9683f31c36730b9a2f" title="Figure out which column to plot, comment out first row for gnuplot and remove all carriage returns." alt="" coords="163,104,305,129"/>
+<area shape="rect" id="node7" href="$group__Plot.html#gaa8e3f2905b75a5c1948688893841cd67" title="Set to daily / weekly / monthly data." alt="" coords="167,153,301,179"/>
+<area shape="rect" id="node4" href="$group__API.html#ga12f3d2303d66828fb24f063ed6277d35" title="A call back function to be used with curl." alt="" coords="417,31,493,56"/>
+<area shape="rect" id="node5" href="$group__Plot.html#gaaa6473d0c9cb6ee9409c20767ef6866f" title="Getter." alt="" coords="364,80,545,105"/>
+</map>

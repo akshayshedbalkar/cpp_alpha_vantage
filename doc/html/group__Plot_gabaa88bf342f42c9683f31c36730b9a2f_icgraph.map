@@ -1,0 +1,4 @@
+<map id="Plot::process_data" name="Plot::process_data">
+<area shape="rect" id="node1" title="Figure out which column to plot, comment out first row for gnuplot and remove all carriage returns." alt="" coords="152,5,293,31"/>
+<area shape="rect" id="node2" href="$group__Stock.html#ga79f9d23a26828d67d22357a92266e52a" title="Fetch historical stock data." alt="" coords="5,5,104,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Plot::percentage_plot" name="Plot::percentage_plot">
+<area shape="rect" id="node1" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="5,5,165,31"/>
+<area shape="rect" id="node2" href="$group__Plot.html#gab916c45cb92b02396d77602b363a8906" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="213,5,391,31"/>
+</map>

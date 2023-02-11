@@ -64,19 +64,19 @@ configure_file(${CMAKE_SOURCE_DIR}/stocks.config ${CMAKE_BINARY_DIR}/bin/stocks.
 
 add_custom_command(TARGET curl_stocks POST_BUILD        
     COMMAND ${CMAKE_COMMAND} -E copy_if_different  
-    "${PROJECT_SOURCE_DIR}/extern/lib/libcurl-x64.dll"      
+    "${CMAKE_SOURCE_DIR}/extern/lib/libcurl-x64.dll"      
     $<TARGET_FILE_DIR:curl_stocks>)                 
 
 #Doxygen configuration
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
-    set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/doc")
+    set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/doc")
     set(DOXYGEN_USE_MDFILE_AS_MAINPAGE "README.md")
     set(DOXYGEN_HAVE_DOT "YES")
     set(DOXYGEN_CALL_GRAPH "YES")
     set(DOXYGEN_CALLER_GRAPH "YES")
     doxygen_add_docs(
         doc
-        ${PROJECT_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}
         )
 endif()
