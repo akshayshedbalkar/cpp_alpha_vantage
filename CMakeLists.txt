@@ -70,7 +70,7 @@ add_custom_command(TARGET curl_stocks POST_BUILD
 #Doxygen configuration
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
-    set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/doc")
+    set(DOXYGEN_HTML_OUTPUT  "${CMAKE_SOURCE_DIR}/docs")
     set(DOXYGEN_USE_MDFILE_AS_MAINPAGE "README.md")
     set(DOXYGEN_HAVE_DOT "YES")
     set(DOXYGEN_CALL_GRAPH "YES")
