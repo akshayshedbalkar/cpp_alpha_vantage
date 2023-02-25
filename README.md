@@ -78,6 +78,9 @@ stock2.display();
 Note that all charts wil be shown one after another. You can put all stock objects in a `std::vector`and fetch data in a loop.
 Note however, that the free Alpha Vange API key only allows 5 calls at a time. 
 
+### Code Documentation
+Doxygen documentation for the code can be found here: https://akshayshedbalkar.github.io/cpp_alpha_vantage/
+
 ### Dependencies
 - curl (https://curl.haxx.se/)
 - gnuplot (http://www.gnuplot.info/)
