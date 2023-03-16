@@ -1,0 +1,4 @@
+<map id="Plot::cleanup" name="Plot::cleanup">
+<area shape="rect" id="node1" title="Delete files storing stock data." alt="" coords="144,5,251,31"/>
+<area shape="rect" id="node2" href="$group__Plot.html#ga277e9c79c4357b3a317d74d61dabefcf" title="Destructor cleans up temporaray files storing stock data." alt="" coords="5,5,96,31"/>
+</map>

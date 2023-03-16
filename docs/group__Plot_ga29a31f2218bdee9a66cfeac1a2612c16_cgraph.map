@@ -1,0 +1,6 @@
+<map id="Plot::display" name="Plot::display">
+<area shape="rect" id="node1" title="Plot data for all stocks." alt="" coords="5,31,108,56"/>
+<area shape="rect" id="node2" href="$group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="156,5,316,31"/>
+<area shape="rect" id="node4" href="$group__Plot.html#gab02a98be1ec81b156e0803c0b0ed0061" title="Setup options for gnuplot." alt="" coords="163,55,309,80"/>
+<area shape="rect" id="node3" href="$group__Plot.html#gab916c45cb92b02396d77602b363a8906" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="364,5,541,31"/>
+</map>
