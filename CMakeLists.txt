@@ -78,6 +78,7 @@ if(DOXYGEN_FOUND)
     set(DOXYGEN_HAVE_DOT "YES")
     set(DOXYGEN_CALL_GRAPH "YES")
     set(DOXYGEN_CALLER_GRAPH "YES")
+    set(DOXYGEN_ALWAYS_DETAILED_SEC "YES")
     doxygen_add_docs(
         doc
         ${CMAKE_SOURCE_DIR}
