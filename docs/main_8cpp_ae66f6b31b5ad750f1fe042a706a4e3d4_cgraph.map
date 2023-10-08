@@ -1,0 +1,17 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,84,60,112"/>
+<area shape="rect" id="Node000002" href="$group__Config.html#gac8184fb7c7844de21596b4cf52b8171c" title="First configuration item." alt="" coords="108,5,214,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,81,106,44,115,38,118,43,109,48,54,86"/>
+<area shape="rect" id="Node000003" href="$group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="110,57,212,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="59,90,94,82,95,88,60,95"/>
+<area shape="rect" id="Node000007" href="$group__Config.html#ga9660281362af463a34a91bb907854f77" title="Last configuration item." alt="" coords="114,109,208,137"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="60,100,99,108,98,113,59,106"/>
+<area shape="rect" id="Node000008" href="$group__Config.html#gab81135b527f13da8a057b56cc0a9990b" title="Read strings from stocks.config file." alt="" coords="111,161,211,189"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="55,110,109,146,118,151,115,156,106,151,52,115"/>
+<area shape="rect" id="Node000004" href="$group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="262,32,421,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="211,61,246,57,247,62,212,67"/>
+<area shape="rect" id="Node000006" href="$group__Plot.html#gab02a98be1ec81b156e0803c0b0ed0061" title="Setup options for gnuplot." alt="" coords="269,84,415,112"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="212,76,254,82,253,87,211,81"/>
+<area shape="rect" id="Node000005" href="$group__Plot.html#gab916c45cb92b02396d77602b363a8906" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="469,32,646,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="422,43,454,43,454,49,422,49"/>
+</map>

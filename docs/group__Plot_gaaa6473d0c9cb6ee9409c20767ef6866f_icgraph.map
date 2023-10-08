@@ -1,7 +1,9 @@
 <map id="Plot::get_time_in_weeks" name="Plot::get_time_in_weeks">
-<area shape="rect" id="Node000001" title="Getter." alt="" coords="283,5,463,33"/>
-<area shape="rect" id="Node000002" href="$group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="152,5,235,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,22,235,22,235,17,268,17"/>
+<area shape="rect" id="Node000001" title="Getter." alt="" coords="283,32,463,60"/>
+<area shape="rect" id="Node000002" href="$group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="152,32,235,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,49,235,49,235,43,268,43"/>
 <area shape="rect" id="Node000003" href="$group__Stock.html#ga79f9d23a26828d67d22357a92266e52a" title="Fetch historical stock data." alt="" coords="5,5,104,33"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,22,104,22,104,17,136,17"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,38,103,31,104,26,137,32"/>
+<area shape="rect" id="Node000004" href="$api__test_8cpp.html#ac53000f12bb0080bdde1c8ea3c6f6c7f" title=" " alt="" coords="7,57,102,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="137,59,102,65,101,60,136,54"/>
 </map>

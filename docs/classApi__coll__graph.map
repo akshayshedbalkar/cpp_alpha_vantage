@@ -1,0 +1,3 @@
+<map id="Api" name="Api">
+<area shape="rect" id="Node000001" title="Wraps alphavantage API. Fetches stock data using curl." alt="" coords="5,5,75,139"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="TEST_CASE" name="TEST_CASE">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,59,100,86"/>
+<area shape="rect" id="Node000002" href="$group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="156,32,239,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,61,140,54,141,59,100,66"/>
+<area shape="rect" id="Node000005" href="$group__Config.html#gab81135b527f13da8a057b56cc0a9990b" title="Read strings from stocks.config file." alt="" coords="148,84,247,112"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="100,78,133,84,132,89,100,83"/>
+<area shape="rect" id="Node000003" href="$group__API.html#ga12f3d2303d66828fb24f063ed6277d35" title="A call back function to be used with curl." alt="" coords="348,5,423,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,37,332,24,332,29,240,43"/>
+<area shape="rect" id="Node000004" href="$group__Plot.html#gaaa6473d0c9cb6ee9409c20767ef6866f" title="Getter." alt="" coords="295,57,475,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="240,49,280,54,279,60,239,54"/>
+</map>

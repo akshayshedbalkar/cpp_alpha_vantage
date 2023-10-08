@@ -108,7 +108,7 @@ Functions</h2></td></tr>
 <tr class="memitem:gab916c45cb92b02396d77602b363a8906" id="r_gab916c45cb92b02396d77602b363a8906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#gab916c45cb92b02396d77602b363a8906">Plot::get_first_datapoint</a> (Gnuplot &amp;g, std::string const &amp;file_name) const</td></tr>
 <tr class="memdesc:gab916c45cb92b02396d77602b363a8906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a variable on the command line in gnuplot.  <br /></td></tr>
 <tr class="separator:gab916c45cb92b02396d77602b363a8906"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6fc0b3b45aea2807991a4600a2704e51" id="r_ga6fc0b3b45aea2807991a4600a2704e51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51">Plot::percentage_plot</a> (Gnuplot &amp;g, std::string const &amp;file_name, const Plot_type type) const</td></tr>
+<tr class="memitem:ga6fc0b3b45aea2807991a4600a2704e51" id="r_ga6fc0b3b45aea2807991a4600a2704e51"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51">Plot::percentage_plot</a> (Gnuplot &amp;g, std::string const &amp;file_name, const <a class="el" href="plot_8cpp.html#a7eea44037553cc8ad8af2785fdb6c244">Plot_type</a> type) const</td></tr>
 <tr class="memdesc:ga6fc0b3b45aea2807991a4600a2704e51"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classPlot.html" title="Wraps gnuplot to plot stock data.">Plot</a> data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks.  <br /></td></tr>
 <tr class="separator:ga6fc0b3b45aea2807991a4600a2704e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa8e3f2905b75a5c1948688893841cd67" id="r_gaa8e3f2905b75a5c1948688893841cd67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Plot.html#gaa8e3f2905b75a5c1948688893841cd67">Plot::set_function</a> (std::string const &amp;function)</td></tr>
@@ -237,9 +237,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__Plot_ga29a31f2218bdee9a66cfeac1a2612c16_icgraph.png" border="0" usemap="#agroup__Plot_ga29a31f2218bdee9a66cfeac1a2612c16_icgraph" alt=""/></div>
 <map name="agroup__Plot_ga29a31f2218bdee9a66cfeac1a2612c16_icgraph" id="agroup__Plot_ga29a31f2218bdee9a66cfeac1a2612c16_icgraph">
-<area shape="rect" title="Plot data for all stocks." alt="" coords="166,5,267,33"/>
+<area shape="rect" title="Plot data for all stocks." alt="" coords="166,32,267,60"/>
 <area shape="rect" href="group__Stock.html#ga412525c0b0942c6934e188276475b49a" title="Plot stock data." alt="" coords="5,5,118,33"/>
-<area shape="poly" title=" " alt="" coords="150,22,118,22,118,17,150,17"/>
+<area shape="poly" title=" " alt="" coords="150,37,118,31,118,26,151,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="34,57,89,85"/>
+<area shape="poly" title=" " alt="" coords="151,59,90,69,89,64,150,54"/>
 </map>
 </div>
 
@@ -324,15 +326,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__Plot_gab916c45cb92b02396d77602b363a8906_icgraph.png" border="0" usemap="#agroup__Plot_gab916c45cb92b02396d77602b363a8906_icgraph" alt=""/></div>
 <map name="agroup__Plot_gab916c45cb92b02396d77602b363a8906_icgraph" id="agroup__Plot_gab916c45cb92b02396d77602b363a8906_icgraph">
-<area shape="rect" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="522,32,699,60"/>
-<area shape="rect" href="group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="315,32,474,60"/>
-<area shape="poly" title=" " alt="" coords="507,49,475,49,475,43,507,43"/>
-<area shape="rect" href="group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,5,267,33"/>
-<area shape="poly" title=" " alt="" coords="299,34,267,29,268,24,300,29"/>
-<area shape="rect" href="group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,57,267,85"/>
-<area shape="poly" title=" " alt="" coords="300,62,268,67,267,61,299,57"/>
+<area shape="rect" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="522,59,699,86"/>
+<area shape="rect" href="group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="315,59,474,86"/>
+<area shape="poly" title=" " alt="" coords="507,75,475,75,475,70,507,70"/>
+<area shape="rect" href="group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,32,267,60"/>
+<area shape="poly" title=" " alt="" coords="299,61,267,56,268,51,300,56"/>
+<area shape="rect" href="group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,84,267,112"/>
+<area shape="poly" title=" " alt="" coords="300,89,268,93,267,88,299,83"/>
 <area shape="rect" href="group__Stock.html#ga412525c0b0942c6934e188276475b49a" title="Plot stock data." alt="" coords="5,5,118,33"/>
-<area shape="poly" title=" " alt="" coords="150,22,118,22,118,17,150,17"/>
+<area shape="poly" title=" " alt="" coords="150,37,118,31,118,26,151,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="34,57,89,85"/>
+<area shape="poly" title=" " alt="" coords="151,59,90,69,89,64,150,54"/>
 </map>
 </div>
 
@@ -368,11 +372,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__Plot_gaaa6473d0c9cb6ee9409c20767ef6866f_icgraph.png" border="0" usemap="#agroup__Plot_gaaa6473d0c9cb6ee9409c20767ef6866f_icgraph" alt=""/></div>
 <map name="agroup__Plot_gaaa6473d0c9cb6ee9409c20767ef6866f_icgraph" id="agroup__Plot_gaaa6473d0c9cb6ee9409c20767ef6866f_icgraph">
-<area shape="rect" title="Getter." alt="" coords="283,5,463,33"/>
-<area shape="rect" href="group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="152,5,235,33"/>
-<area shape="poly" title=" " alt="" coords="268,22,235,22,235,17,268,17"/>
+<area shape="rect" title="Getter." alt="" coords="283,32,463,60"/>
+<area shape="rect" href="group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="152,32,235,60"/>
+<area shape="poly" title=" " alt="" coords="268,49,235,49,235,43,268,43"/>
 <area shape="rect" href="group__Stock.html#ga79f9d23a26828d67d22357a92266e52a" title="Fetch historical stock data." alt="" coords="5,5,104,33"/>
-<area shape="poly" title=" " alt="" coords="136,22,104,22,104,17,136,17"/>
+<area shape="poly" title=" " alt="" coords="136,38,103,31,104,26,137,32"/>
+<area shape="rect" href="api__test_8cpp.html#ac53000f12bb0080bdde1c8ea3c6f6c7f" title=" " alt="" coords="7,57,102,85"/>
+<area shape="poly" title=" " alt="" coords="137,59,102,65,101,60,136,54"/>
 </map>
 </div>
 
@@ -399,7 +405,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Plot_type&#160;</td>
+          <td class="paramtype">const <a class="el" href="plot_8cpp.html#a7eea44037553cc8ad8af2785fdb6c244">Plot_type</a>&#160;</td>
           <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>
@@ -434,13 +440,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__Plot_ga6fc0b3b45aea2807991a4600a2704e51_icgraph.png" border="0" usemap="#agroup__Plot_ga6fc0b3b45aea2807991a4600a2704e51_icgraph" alt=""/></div>
 <map name="agroup__Plot_ga6fc0b3b45aea2807991a4600a2704e51_icgraph" id="agroup__Plot_ga6fc0b3b45aea2807991a4600a2704e51_icgraph">
-<area shape="rect" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="315,32,474,60"/>
-<area shape="rect" href="group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,5,267,33"/>
-<area shape="poly" title=" " alt="" coords="299,34,267,29,268,24,300,29"/>
-<area shape="rect" href="group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,57,267,85"/>
-<area shape="poly" title=" " alt="" coords="300,62,268,67,267,61,299,57"/>
+<area shape="rect" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="315,59,474,86"/>
+<area shape="rect" href="group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,32,267,60"/>
+<area shape="poly" title=" " alt="" coords="299,61,267,56,268,51,300,56"/>
+<area shape="rect" href="group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,84,267,112"/>
+<area shape="poly" title=" " alt="" coords="300,89,268,93,267,88,299,83"/>
 <area shape="rect" href="group__Stock.html#ga412525c0b0942c6934e188276475b49a" title="Plot stock data." alt="" coords="5,5,118,33"/>
-<area shape="poly" title=" " alt="" coords="150,22,118,22,118,17,150,17"/>
+<area shape="poly" title=" " alt="" coords="150,37,118,31,118,26,151,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="34,57,89,85"/>
+<area shape="poly" title=" " alt="" coords="151,59,90,69,89,64,150,54"/>
 </map>
 </div>
 
@@ -602,13 +610,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="group__Plot_gab02a98be1ec81b156e0803c0b0ed0061_icgraph.png" border="0" usemap="#agroup__Plot_gab02a98be1ec81b156e0803c0b0ed0061_icgraph" alt=""/></div>
 <map name="agroup__Plot_gab02a98be1ec81b156e0803c0b0ed0061_icgraph" id="agroup__Plot_gab02a98be1ec81b156e0803c0b0ed0061_icgraph">
-<area shape="rect" title="Setup options for gnuplot." alt="" coords="315,32,461,60"/>
-<area shape="rect" href="group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,5,267,33"/>
-<area shape="poly" title=" " alt="" coords="299,35,267,30,268,24,300,29"/>
-<area shape="rect" href="group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,57,267,85"/>
-<area shape="poly" title=" " alt="" coords="300,62,268,66,267,61,299,56"/>
+<area shape="rect" title="Setup options for gnuplot." alt="" coords="315,59,461,86"/>
+<area shape="rect" href="group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,32,267,60"/>
+<area shape="poly" title=" " alt="" coords="299,61,267,56,268,51,300,56"/>
+<area shape="rect" href="group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,84,267,112"/>
+<area shape="poly" title=" " alt="" coords="300,88,268,93,267,88,299,83"/>
 <area shape="rect" href="group__Stock.html#ga412525c0b0942c6934e188276475b49a" title="Plot stock data." alt="" coords="5,5,118,33"/>
-<area shape="poly" title=" " alt="" coords="150,22,118,22,118,17,150,17"/>
+<area shape="poly" title=" " alt="" coords="150,37,118,31,118,26,151,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="34,57,89,85"/>
+<area shape="poly" title=" " alt="" coords="151,59,90,69,89,64,150,54"/>
 </map>
 </div>
 

@@ -1,5 +1,7 @@
 <map id="Plot::display" name="Plot::display">
-<area shape="rect" id="Node000001" title="Plot data for all stocks." alt="" coords="166,5,267,33"/>
+<area shape="rect" id="Node000001" title="Plot data for all stocks." alt="" coords="166,32,267,60"/>
 <area shape="rect" id="Node000002" href="$group__Stock.html#ga412525c0b0942c6934e188276475b49a" title="Plot stock data." alt="" coords="5,5,118,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,22,118,22,118,17,150,17"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,37,118,31,118,26,151,32"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="34,57,89,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,59,90,69,89,64,150,54"/>
 </map>
