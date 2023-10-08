@@ -79,6 +79,9 @@ if(DOXYGEN_FOUND)
     set(DOXYGEN_CALL_GRAPH "YES")
     set(DOXYGEN_CALLER_GRAPH "YES")
     set(DOXYGEN_ALWAYS_DETAILED_SEC "YES")
+    set(DOXYGEN_EXTRACT_ALL "YES")
+    set(DOXYGEN_UML_LOOK "YES")
+    set(DOXYGEN_EXCLUDE_PATTERNS "*/build/*" "*/extern/*" "*/test/*")
     doxygen_add_docs(
         doc
         ${CMAKE_SOURCE_DIR}
