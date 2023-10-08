@@ -1,7 +1,11 @@
 <map id="Stock::display" name="Stock::display">
-<area shape="rect" id="node1" title="Plot stock data." alt="" coords="5,31,119,56"/>
-<area shape="rect" id="node2" href="$group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="167,31,269,56"/>
-<area shape="rect" id="node3" href="$group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="317,5,477,31"/>
-<area shape="rect" id="node5" href="$group__Plot.html#gab02a98be1ec81b156e0803c0b0ed0061" title="Setup options for gnuplot." alt="" coords="324,55,471,80"/>
-<area shape="rect" id="node4" href="$group__Plot.html#gab916c45cb92b02396d77602b363a8906" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="525,5,703,31"/>
+<area shape="rect" id="Node000001" title="Plot stock data." alt="" coords="5,32,118,60"/>
+<area shape="rect" id="Node000002" href="$group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,32,267,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,43,150,43,150,49,118,49"/>
+<area shape="rect" id="Node000003" href="$group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="315,5,474,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,36,299,31,300,36,268,41"/>
+<area shape="rect" id="Node000005" href="$group__Plot.html#gab02a98be1ec81b156e0803c0b0ed0061" title="Setup options for gnuplot." alt="" coords="322,57,468,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="268,50,307,56,306,61,267,56"/>
+<area shape="rect" id="Node000004" href="$group__Plot.html#gab916c45cb92b02396d77602b363a8906" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="522,5,699,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="475,17,507,17,507,22,475,22"/>
 </map>

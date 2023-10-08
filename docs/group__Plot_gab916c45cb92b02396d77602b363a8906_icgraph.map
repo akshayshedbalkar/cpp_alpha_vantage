@@ -1,5 +1,11 @@
 <map id="Plot::get_first_datapoint" name="Plot::get_first_datapoint">
-<area shape="rect" id="node1" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="364,5,541,31"/>
-<area shape="rect" id="node2" href="$group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="156,5,316,31"/>
-<area shape="rect" id="node3" href="$group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="5,5,108,31"/>
+<area shape="rect" id="Node000001" title="Calculate furthest point back in time upto which to plot (time_in_weeks). The point is saved in a var..." alt="" coords="522,32,699,60"/>
+<area shape="rect" id="Node000002" href="$group__Plot.html#ga6fc0b3b45aea2807991a4600a2704e51" title="Plot data from time_in_weeks up until today. Oldest datapoint is normalized for all stocks." alt="" coords="315,32,474,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="507,49,475,49,475,43,507,43"/>
+<area shape="rect" id="Node000003" href="$group__Plot.html#ga29a31f2218bdee9a66cfeac1a2612c16" title="Plot data for all stocks." alt="" coords="166,5,267,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="299,34,267,29,268,24,300,29"/>
+<area shape="rect" id="Node000005" href="$group__Plot.html#ga68d9459721679e6fe7759c295c3be6d1" title="Plot data for a single stock." alt="" coords="166,57,267,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="300,62,268,67,267,61,299,57"/>
+<area shape="rect" id="Node000004" href="$group__Stock.html#ga412525c0b0942c6934e188276475b49a" title="Plot stock data." alt="" coords="5,5,118,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,22,118,22,118,17,150,17"/>
 </map>

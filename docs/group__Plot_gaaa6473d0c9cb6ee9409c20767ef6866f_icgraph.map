@@ -1,5 +1,7 @@
 <map id="Plot::get_time_in_weeks" name="Plot::get_time_in_weeks">
-<area shape="rect" id="node1" title="Getter." alt="" coords="284,5,465,31"/>
-<area shape="rect" id="node2" href="$group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="152,5,236,31"/>
-<area shape="rect" id="node3" href="$group__Stock.html#ga79f9d23a26828d67d22357a92266e52a" title="Fetch historical stock data." alt="" coords="5,5,104,31"/>
+<area shape="rect" id="Node000001" title="Getter." alt="" coords="283,5,463,33"/>
+<area shape="rect" id="Node000002" href="$group__API.html#gae2e90b478cc4da99a7a09123dbe3c1f8" title="Fetch stock data." alt="" coords="152,5,235,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="268,22,235,22,235,17,268,17"/>
+<area shape="rect" id="Node000003" href="$group__Stock.html#ga79f9d23a26828d67d22357a92266e52a" title="Fetch historical stock data." alt="" coords="5,5,104,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="136,22,104,22,104,17,136,17"/>
 </map>
