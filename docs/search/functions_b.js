@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['test_5fcase_0',['TEST_CASE',['../api__test_8cpp.html#ac53000f12bb0080bdde1c8ea3c6f6c7f',1,'api_test.cpp']]]
+  ['_7eapi_0',['~Api',['../group__API.html#gae0c610618193aeae223744d466d0e9c4',1,'Api']]],
+  ['_7eplot_1',['~Plot',['../group__Plot.html#ga277e9c79c4357b3a317d74d61dabefcf',1,'Plot']]]
 ];

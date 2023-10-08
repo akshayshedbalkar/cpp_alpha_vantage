@@ -1,11 +1,9 @@
 <map id="src/api/api.h" name="src/api/api.h">
-<area shape="rect" id="Node000001" title="Api class." alt="" coords="221,5,321,33"/>
-<area shape="rect" id="Node000002" href="$api_8cpp.html" title=" " alt="" coords="5,90,121,117"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,42,97,91,95,86,223,37"/>
-<area shape="rect" id="Node000003" href="$main_8cpp.html" title=" " alt="" coords="144,90,249,117"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,47,210,91,206,87,247,43"/>
-<area shape="rect" id="Node000004" href="$stock_8cpp.html" title=" " alt="" coords="273,90,418,117"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="295,43,336,87,332,91,291,47"/>
-<area shape="rect" id="Node000005" href="$api__test_8cpp.html" title=" " alt="" coords="442,81,580,126"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="325,36,448,78,446,83,323,41"/>
+<area shape="rect" id="Node000001" title="Api class." alt="" coords="146,5,247,33"/>
+<area shape="rect" id="Node000002" href="$api_8cpp.html" title=" " alt="" coords="5,81,121,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,43,88,83,85,78,158,38"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title=" " alt="" coords="144,81,249,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="199,49,199,81,194,81,194,49"/>
+<area shape="rect" id="Node000004" href="$stock_8cpp.html" title=" " alt="" coords="273,81,418,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="238,38,320,78,318,83,236,43"/>
 </map>
