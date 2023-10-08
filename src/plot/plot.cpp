@@ -39,6 +39,10 @@ Plot::process_data(std::string &s) const
   {
     throw "Too many or too frequent API calls. Wait a bit and try again.\n";
   }
+  if (s == "{}")
+  {
+    throw "A stock symbol was not found. \n";
+  }
 
   size_t pos = s.find(csv_column_name);
   auto s_end = std::next(s.begin(), pos);
