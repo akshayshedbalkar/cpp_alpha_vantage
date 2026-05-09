@@ -68,7 +68,7 @@ main()
 
     // Fetch stock data
     int number_of_stocks{ 0 };
-    constexpr int limit{ 4 };
+    constexpr int limit{ 1 };
     for (auto &stock : stocks)
     {
       if (number_of_stocks++ > limit)

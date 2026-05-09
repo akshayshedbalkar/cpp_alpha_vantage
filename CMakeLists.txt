@@ -27,7 +27,7 @@ target_compile_options(curl_stocks
     )
 
 ##Linker options, external libraries/objects to link against
-find_package(Boost COMPONENTS filesystem iostreams)
+find_package(Boost CONFIG COMPONENTS filesystem iostreams)
 target_link_libraries(curl_stocks 
     PRIVATE
     Boost::filesystem 
