@@ -15,7 +15,7 @@ enum class Plot_type
 
 int Plot::csv_column{ 0 };
 float Plot::time_in_weeks{ 0.0 };
-std::string Plot::csv_column_name{ "" };
+std::string Plot::csv_column_name{};
 
 Plot::Plot() {}
 
@@ -44,8 +44,8 @@ Plot::process_data(std::string &s) const
     throw "A stock symbol was not found. \n";
   }
 
-  size_t pos = s.find(csv_column_name);
-  auto s_end = std::next(s.begin(), pos);
+  auto pos = s.find(csv_column_name);
+  auto s_end = std::next(s.begin(), (long)pos);
   csv_column = static_cast<int>(std::count(s.begin(), s_end, ',')) + 1;
 
   s.insert(0, "#");
@@ -146,7 +146,7 @@ Plot::cleanup() const
 {
   for (auto const &i : file_names)
   {
-    remove(i.c_str());
+    (void)remove(i.c_str());
   }
 }
 
